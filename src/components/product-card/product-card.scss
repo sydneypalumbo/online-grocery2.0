@@ -1,0 +1,47 @@
+.product-card {
+  padding: 10px;
+  display: inline-block;
+  font-family: "Century Gothic", sans-serif;
+  text-transform: capitalize;
+
+  .product-card-image {
+    width: auto;
+    max-width: 100%;
+    max-height: 200px;
+    display: block;
+    margin: auto;
+  }
+  .product-card-name {
+    font-size: 18px;
+    display: inline-block;
+    padding-right: 7px;
+    margin: 5px 0;
+
+  }
+
+  .product-card-size {
+    display: inline-block;
+    font-size: 12px;
+  }
+
+  .product-card-buttons {
+    display: flex;
+    justify-content: space-between;
+
+    .product-card-price {
+      padding: 7px 5px;
+      color: #008800;
+      width: 50px;
+      border: 1px solid #008800;
+      text-align: center;
+
+    }
+
+    .product-card-add-to-cart {
+      width: auto;
+      height: 25px;
+      padding: 5px 15px;
+      border: 1px solid #c301d4;
+    }
+  }
+}
