@@ -1,8 +1,8 @@
-#Online Grocery Store 2.0
+# Online Grocery Store 2.0
 
-#Directions:
--clone repo
--npm install
--npm run build
--npm start
+# Directions:
+- clone repo
+- npm install
+- npm run build
+- npm start
 

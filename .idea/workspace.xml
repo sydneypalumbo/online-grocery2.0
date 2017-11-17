@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dfc720a-1e90-4aa0-82cf-c84d32ca3a27" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/online-grocery2.0.iml" afterPath="$PROJECT_DIR$/.idea/online-grocery2.0.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/online-grocery.bundle.js" afterPath="$PROJECT_DIR$/online-grocery.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/product-card/product-card.js" afterPath="$PROJECT_DIR$/src/components/product-card/product-card.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/product-card/product-card.scss" afterPath="$PROJECT_DIR$/src/components/product-card/product-card.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/product-grid/product-grid.js" afterPath="$PROJECT_DIR$/src/components/product-grid/product-grid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/product-grid/product-grid.scss" afterPath="$PROJECT_DIR$/src/components/product-grid/product-grid.scss" />
     </list>
     <ignored path="online-grocery2.0.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,7 +80,7 @@
       <file leaf-file-name="product-grid.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/product-grid/product-grid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
+            <state relative-caret-position="114">
               <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
@@ -96,7 +89,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product-card.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="product-card.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/product-card/product-card.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -118,7 +111,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product-grid.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="product-grid.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/product-grid/product-grid.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
@@ -166,8 +159,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="29" />
-    <option name="y" value="25" />
+    <option name="x" value="281" />
+    <option name="y" value="186" />
     <option name="width" value="1245" />
     <option name="height" value="688" />
   </component>
@@ -400,15 +393,15 @@
       <option name="presentableId" value="Default" />
       <updated>1510871407270</updated>
       <workItem from="1510871408954" duration="12536000" />
-      <workItem from="1510925641905" duration="932000" />
+      <workItem from="1510925641905" duration="1667000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13468000" />
+    <option name="totallyTimeSpent" value="14203000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="29" y="25" width="1245" height="688" extended-state="0" />
+    <frame x="281" y="186" width="1245" height="688" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -575,13 +568,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/product-card/product-card.js">
+    <entry file="file://$PROJECT_DIR$/src/components/product-grid/product-grid.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -597,7 +588,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/product-grid/product-grid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
+        <state relative-caret-position="114">
           <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
@@ -605,11 +596,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/product-grid/product-grid.scss">
+    <entry file="file://$PROJECT_DIR$/src/components/product-card/product-card.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="150">
+          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
