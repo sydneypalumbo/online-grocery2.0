@@ -1,13 +1,13 @@
+@import "../../base/base";
+
 .product-card {
-  padding: 10px;
+  padding: 10%;
   display: inline-block;
-  font-family: "Century Gothic", sans-serif;
   text-transform: capitalize;
 
   .product-card-image {
     width: auto;
     max-width: 100%;
-    max-height: 200px;
     display: block;
     margin: auto;
   }
@@ -41,7 +41,10 @@
       width: auto;
       height: 25px;
       padding: 5px 15px;
-      border: 1px solid #c301d4;
+      border: 1px solid $cart-color;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
