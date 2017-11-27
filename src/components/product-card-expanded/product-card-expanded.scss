@@ -52,5 +52,15 @@
         cursor: pointer;
       }
     }
+
+    .product-card-quantity-button {
+      width: auto;
+      height: 25px;
+      padding: 5px 15px;
+      border: 1px solid deepskyblue;
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
