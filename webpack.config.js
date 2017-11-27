@@ -1,6 +1,7 @@
 module.exports = {
     entry: {
-        "online-grocery": './src/online-grocery.js'
+        "online-grocery": './src/online-grocery.js',
+        "product-page": './src/product-page.js'
     },
     output: {
         path: __dirname,

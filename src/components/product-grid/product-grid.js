@@ -22,7 +22,7 @@ const products = [{
     },
     {
         name: "food 2",
-        src: "http://www.publix.com/images/products/5000/005378-600x600-A.jpg",
+        src: "http://www.publix.com/images/products/20000/023844-600x600-A.jpg",
         price: 5,
         size: "5 oz"
     }]
