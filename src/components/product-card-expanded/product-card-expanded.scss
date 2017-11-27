@@ -5,14 +5,21 @@
   display: inline-block;
   text-transform: capitalize;
 
-  .product-card-image {
+  .product-card-image-large {
     width: auto;
-    max-width: 100%;
+    max-width: 70%;
     display: block;
     margin: auto;
   }
   .product-card-name {
-    font-size: 18px;
+    font-size: 40px;
+    display: inline-block;
+    padding-right: 7px;
+    margin: 5px 0;
+  }
+
+  .product-card-description {
+    font-size: 14px;
     display: inline-block;
     padding-right: 7px;
     margin: 5px 0;
