@@ -5,7 +5,6 @@ import './top-nav.scss'
 export default class TopNav extends React.Component{
 
     render () {
-
         let tabs = this.props.tabNames.map(function(name) {
             return (
                 <Tab tabName={name}/>
