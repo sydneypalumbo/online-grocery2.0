@@ -30,9 +30,9 @@ const products = [{
 export default class ProductGrid extends React.Component {
 
     render() {
-        let productCards = products.map(product => {
+        let productCards = products.map((product,i) => {
             return (
-                <div className='product-grid-item'>
+                <div key={i} className='product-grid-item'>
                     <ProductCard {...product}/>
                 </div>
             )
