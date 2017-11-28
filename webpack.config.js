@@ -1,11 +1,8 @@
 module.exports = {
-    entry: {
-        "online-grocery": './src/online-grocery.js',
-        "product-page": './src/product-page.js'
-    },
+    entry: './src/main.js',
     output: {
         path: __dirname,
-        filename: '[name].bundle.js'
+        filename: 'online-grocery.bundle.js'
     },
     module: {
         loaders: [

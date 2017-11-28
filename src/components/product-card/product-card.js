@@ -1,13 +1,15 @@
 import React from 'react'
+import { Router, Link, Switch } from 'react-router-dom';
 import './product-card.scss'
 
 export default class ProductCard extends React.Component {
 
     render() {
+
         return (
             <div className='product-card'>
                 <img className='product-card-image' src={this.props.src}/>
-                <a href="../productpage.html" className='product-card-name'>{this.props.name}</a>
+                <Link to='/product' className='product-card-name-small'>{this.props.name}</Link>
                 <div className='product-card-size'>{this.props.size}</div>
                 <div className='product-card-buttons'>
                     <div className='product-card-price'>${this.props.price}</div>

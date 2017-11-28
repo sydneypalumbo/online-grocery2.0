@@ -4,7 +4,7 @@
 /**
  * Created by SPalumbo on 11/16/17.
  */
-import React from 'react'
+import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import TopNav from './components/top-nav/top-nav'
 import ProductPage from "./components/product-page/product-page";
@@ -12,13 +12,17 @@ import './online-grocery.scss';
 
 var tabNames = ['Produce', 'Deli & Dairy', 'Bread, Pasta & Rice', 'Packaged & Canned',
     'Condiments, Spreads & Sauces', 'Frozen Foods', 'Beverages'];
-
-ReactDOM.render(
+var view = "viewProduct"
+class ProductViewPage extends Component{
+  render(){
+    return(
     <div>
         <img className='logo-style' src={'../../src/images/SAFEWAY.png'}/>
         <img className='banner-style' src={'../../src/images/advertisement1.png'}/>
-        <TopNav tabNames={tabNames}/>
+        <TopNav tabNames={tabNames} view={view}/>
         <ProductPage/>
-    </div>,
-    document.body
-);
+    </div>
+    )
+  }
+}
+export default ProductViewPage
