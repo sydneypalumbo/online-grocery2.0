@@ -1,9 +1,3 @@
-/**
- * Created by melaniegoetz on 11/26/17.
- */
-/**
- * Created by SPalumbo on 11/16/17.
- */
 import React from 'react'
 import ReactDOM from 'react-dom'
 import TopNav from './components/top-nav/top-nav'

@@ -1,6 +1,6 @@
 import React from 'react'
 import './product-grid.scss'
-import ProductCard from '../product-card/product-card'
+import ProductCardContainer from '../product-card/product-card-container'
 
 const products = [{
         name: "Kraft Natural Cheese, Finely Shredded, Sharp Cheddar",
@@ -57,7 +57,7 @@ export default class ProductGrid extends React.Component {
         let productCards = products.map((product,i) => {
             return (
                 <div key={i} className='product-grid-item'>
-                    <ProductCard {...product}/>
+                    <ProductCardContainer {...product}/>
                 </div>
             )
         })

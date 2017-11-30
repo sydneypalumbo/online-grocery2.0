@@ -1,6 +1,6 @@
 module.exports = {
     entry: {
-        "online-grocery": './src/online-grocery.js',
+        "online-grocery": './src/online-grocery-render.js',
         "product-page": './src/product-page.js'
     },
     output: {
