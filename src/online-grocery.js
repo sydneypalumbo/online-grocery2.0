@@ -7,17 +7,18 @@ import './online-grocery.scss'
 const tabNames = ['Produce', 'Deli & Dairy', 'Bread, Pasta & Rice', 'Packaged & Canned',
 'Condiments, Spreads & Sauces', 'Frozen Foods', 'Beverages'];
 
-export default class OnlineGrocery extends React.Component {
-
-    render() {
-        return (
-            <div>
-                <CartDropdownContainer/>
-                <img className='logo-style' src={'../../src/images/SAFEWAY.png'}/>
-                <img className='banner-style' src={'../../src/images/advertisement1.png'}/>
-                <TopNav tabNames={tabNames}/>
-                <ProductGrid/>
-            </div>
-        )
-    }
+var view = "viewAll"
+class HomePage extends React.Component{
+  render(){
+      return(
+        <div>
+            <CartDropdownContainer/>
+            <img className='logo-style' src={'../../src/images/SAFEWAY.png'}/>
+            <img className='banner-style' src={'../../src/images/advertisement1.png'}/>
+            <TopNav tabNames={tabNames} view={view}/>
+            <ProductGrid/>
+        </div>
+      )
+  }
 }
+export default HomePage

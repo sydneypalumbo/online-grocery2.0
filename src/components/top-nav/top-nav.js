@@ -23,13 +23,17 @@ export default class TopNav extends React.Component{
                 <Tab tabName={name} category={category} key={i} selectTab={this.selectTab.bind(this, name)} />
             );
         });
+        var title= "Viewing Product in "
+        if(this.props.view == "viewAll"){
+          title = "Viewing All "
+        }
 
         return (
           <div>
             <div className="top-nav">
                 {tabs}
             </div>
-            <div className= "title"> Viewing All {this.state.category} </div>
+            <div className= "title"> {title}{this.state.category} </div>
           </div>
         );
     }
