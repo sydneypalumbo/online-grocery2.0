@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Link, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './product-card.scss'
 
 export default class ProductCard extends React.Component {
@@ -18,8 +18,10 @@ export default class ProductCard extends React.Component {
 
         return (
             <div className='product-card'>
-                <img className='product-card-image' src={this.props.src}/>
-                <Link to='/product' className='product-card-name-small'>{this.props.name}</Link>
+                <Link to='/product'>
+                    <img className='product-card-image' src={this.props.src}/>
+                    <div className='product-card-name-small'>{this.props.name}</div>
+                </Link>
                 <div className='product-card-size'>{this.props.size}</div>
                 <div className='product-card-buttons'>
                     <div className='product-card-price'>${this.props.price}</div>

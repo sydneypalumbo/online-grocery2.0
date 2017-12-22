@@ -11,8 +11,8 @@ const mapStateToProps = function(state){
 
 const mapDispatchToProps = function (dispatch) {
     return {
-        handleRemoveFromCart: () => {
-            dispatch(cartActionCreators.removeFromCart())
+        handleRemoveFromCart: (product) => {
+            dispatch(cartActionCreators.removeFromCart(product))
         }
     }
 }

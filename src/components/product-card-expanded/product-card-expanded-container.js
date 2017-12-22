@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductCard from './product-card'
+import ProductCardExpanded from './product-card-expanded'
 import { connect } from 'react-redux'
 import { cartActionCreators } from '../../reducers/cart/cart-actions';
 
@@ -15,7 +15,7 @@ const mapDispatchToProps = function (dispatch) {
 class ProductCardContainer extends React.Component {
     render() {
         return (
-            <ProductCard {...this.props} />
+            <ProductCardExpanded {...this.props} />
         )
     }
 }

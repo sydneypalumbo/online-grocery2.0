@@ -1,13 +1,13 @@
 @import "../../base/base";
 
 .product-card {
-  padding: 10%;
+  padding: 0;
   display: inline-block;
   text-transform: capitalize;
 
   .product-card-image {
     width: auto;
-    max-width: 100%;
+    max-width: 90%;
     display: block;
     margin: auto;
   }
@@ -30,9 +30,9 @@
 
     .product-card-price {
       padding: 7px 5px;
-      color: #008800;
+      color: $price-green;
       width: 50px;
-      border: 1px solid #008800;
+      border: 1px solid $price-green;
       text-align: center;
 
     }

@@ -1,6 +1,6 @@
 import { cartActionTypes } from './cart-actions'
 
-const initialCartState = {count: 0, items:[]}
+const initialCartState = {count: 0, items:[], price: 0}
 
 export default function cartReducer(state = initialCartState, action) {
     switch(action.type) {
@@ -11,7 +11,8 @@ export default function cartReducer(state = initialCartState, action) {
                 items: [
                     ...state.items,
                     action.product
-                ]
+                ],
+                price: state.price + action.product.price
             })
         case(cartActionTypes.REMOVE_FROM_CART):
             const productIndex = state.items.indexOf(action.product)
@@ -21,7 +22,8 @@ export default function cartReducer(state = initialCartState, action) {
             }
             return Object.assign({}, state, {
                 count: state.count - 1,
-                items: newitems
+                items: newitems,
+                price: state.price - action.product.price
             })
         default:
             return state
