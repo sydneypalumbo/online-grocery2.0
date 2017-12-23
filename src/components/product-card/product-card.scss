@@ -1,32 +1,36 @@
 @import "../../base/base";
 
 .product-card {
-  padding: 0;
+  padding: 5%;
   display: inline-block;
   text-transform: capitalize;
+  border-bottom: 1px solid $light-shadow;
 
   .product-card-image {
     width: auto;
-    max-width: 90%;
+    max-width: 75%;
     display: block;
     margin: auto;
+    cursor: pointer;
   }
   .product-card-name-small {
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
     display: inline-block;
+    color: black;
     padding-right: 7px;
     margin: 5px 0;
+    cursor: pointer;
   }
 
   .product-card-size {
-    display: inline-block;
+    display: block;
     font-size: 12px;
   }
 
   .product-card-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
 
     .product-card-price {
       padding: 7px 5px;
@@ -34,7 +38,7 @@
       width: 50px;
       border: 1px solid $price-green;
       text-align: center;
-
+      margin: 5px 5px 0 0;
     }
 
     .product-card-add-to-cart {
@@ -42,6 +46,8 @@
       height: 25px;
       padding: 5px 15px;
       border: 1px solid $cart-color;
+      margin: 5px 5px 0 0;
+
       &:hover {
         cursor: pointer;
         background-color: $hovered-cart-color;

@@ -13,8 +13,7 @@ class HomePage extends React.Component{
       return(
         <div>
             <CartDropdownContainer/>
-            <img className='logo-style' src={'../../src/images/SAFEWAY.png'}/>
-            <img className='banner-style' src={'../../src/images/advertisement1.png'}/>
+            <img className='logo-style' src={'../../src/images/ubelsgrocerybanner.png'}/>
             <TopNav tabNames={tabNames} view={view}/>
             <ProductGrid/>
         </div>

@@ -7,7 +7,8 @@ export default class CartDropdown extends React.Component {
         super(props)
 
         this.state = {
-            dropdownOpen: false
+            dropdownOpen: false,
+            windowHeight: 0
         }
 
         this.openCloseDropdown = this.openCloseDropdown.bind(this)
@@ -16,9 +17,12 @@ export default class CartDropdown extends React.Component {
 
     openCloseDropdown() {
         const currentlyOpen = this.state.dropdownOpen
+        const height = window.innerHeight
         if (this.props.cart.items.length > 0) {
             this.setState({
-                dropdownOpen: !currentlyOpen
+                dropdownOpen: !currentlyOpen,
+                windowHeight: height
+
             })
         }
     }
@@ -37,17 +41,19 @@ export default class CartDropdown extends React.Component {
                 </div>
             )
         })
-        cartItems.push(
+        cartItems.unshift(
             <div className='cart-item cart-checkout-bar'>Checkout
-                <span className='cart-price' >${this.props.cart.price}</span>
+                <span className='cart-price' >Total: ${this.props.cart.price}</span>
             </div>
         )
         return (
-            <div className='cart-button' >
-                <img className='cart-image' onClick={this.openCloseDropdown} src={'../../../src/images/trolley-clipart-white.png'}/>
+            <div className='cart-button' onClick={this.openCloseDropdown}>
+                <img className='cart-image' src={'../../../src/images/trolley-clipart-white.png'}/>
                 <div className='cart-count'>{this.props.cart.count}</div>
                 {this.state.dropdownOpen && this.props.cart.items.length > 0 &&
-                    <div className='cart-dropdown'>{cartItems}</div>
+                    <div style={{'max-height': this.state.windowHeight - 75}} className='cart-dropdown'>
+                        {cartItems}
+                    </div>
                 }
             </div>
         )
