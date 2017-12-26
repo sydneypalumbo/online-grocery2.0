@@ -44,11 +44,20 @@
       margin-top: 1px;
       box-shadow: 2px 2px 5px $dark-shadow;
 
-      .cart-price {
+      .cart-detail {
         position: absolute;
         right: 80px;
+      }
+
+      .cart-quantity {
+        text-transform: lowercase;
+        font-size: 10px;
+      }
+
+      .cart-price {
         color: $price-green;
       }
+
       .cart-delete-item {
         font-family: 'Helvetica', 'Arial', sans-serif;
         position: absolute;
@@ -65,7 +74,7 @@
           background-color: #019801;
         }
 
-        .cart-price {
+        .cart-detail {
           color: white;
         }
       }

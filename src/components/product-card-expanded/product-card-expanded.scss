@@ -5,61 +5,77 @@
   display: inline-block;
   text-transform: capitalize;
 
-  .product-card-image-large {
+  .product-card-expanded-image {
     width: auto;
     max-width: 70%;
     display: block;
     margin: auto;
   }
-  .product-card-name {
+  .product-card-expanded-name {
     font-size: 40px;
     display: inline-block;
     padding-right: 7px;
     margin: 5px 0;
   }
 
-  .product-card-description {
+  .product-card-expanded-description {
     font-size: 14px;
     display: inline-block;
     padding-right: 7px;
     margin: 5px 0;
   }
 
-  .product-card-size {
+  .product-card-expanded-size {
     display: inline-block;
     font-size: 12px;
   }
 
-  .product-card-buttons {
+  .product-card-expanded-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
 
-    .product-card-price {
+    .product-card-expanded-price {
       padding: 7px 5px;
       color: $price-green;
       width: 50px;
       border: 1px solid $price-green;
       text-align: center;
-
+      margin: 5px 5px 0 0;
     }
 
-    .product-card-add-to-cart {
+    .product-card-expanded-add-to-cart {
       width: auto;
       height: 25px;
       padding: 5px 15px;
       border: 1px solid $cart-color;
+      margin: 5px 5px 0 0;
+
       &:hover {
         cursor: pointer;
+        background-color: $hovered-cart-color;
+        border: 1px solid $hovered-cart-color;
+        box-shadow: -2px 2px 5px $light-shadow;
       }
     }
 
-    .product-card-quantity-button {
-      width: auto;
-      height: 25px;
-      padding: 5px 15px;
-      border: 1px solid deepskyblue;
-      &:hover {
+    .product-card-expanded-quantity {
+      padding: 7px 5px;
+      color: $quantity-color;
+      width: 50px;
+      border: 1px solid $quantity-color;
+      text-align: center;
+      margin: 5px 5px 0 0;
+
+      .product-card-expanded-quantity-change {
+        display: inline-block;
+        font-weight: 600;
+        margin: 0 3px;
+        padding: 0 2px;
         cursor: pointer;
+        &:hover {
+          background-color: $quantity-color;
+          color: white;
+        }
       }
     }
   }

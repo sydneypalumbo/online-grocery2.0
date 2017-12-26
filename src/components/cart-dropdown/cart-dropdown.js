@@ -36,14 +36,19 @@ export default class CartDropdown extends React.Component {
             return (
                 <div className='cart-item'>
                     <span>{item.name} </span>
-                    <span className='cart-price'>${item.price} </span>
+                    <span className='cart-detail'>
+                        {item.quantity > 1 &&
+                            <span className='cart-quantity'>{item.quantity} x </span>
+                        }
+                        <span className='cart-price'>${item.price} </span>
+                    </span>
                     <span onClick={() => this.removeFromCart(item)} className='cart-delete-item'>X</span>
                 </div>
             )
         })
         cartItems.unshift(
             <div className='cart-item cart-checkout-bar'>Checkout
-                <span className='cart-price' >Total: ${this.props.cart.price}</span>
+                <span className='cart-detail' >Total: ${this.props.cart.price}</span>
             </div>
         )
         return (
