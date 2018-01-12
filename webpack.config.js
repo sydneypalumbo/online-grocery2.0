@@ -1,9 +1,16 @@
+'use strict';
+
+var webpack = require('webpack');
+var path = require('path')
 module.exports = {
     entry: './src/main.js',
     output: {
         path: __dirname,
-        filename: 'online-grocery.bundle.js'
+        filename: './public/bundle.js'
+
     },
+    context: __dirname,
+    devtool: 'source-map',
     module: {
         loaders: [
             {
@@ -18,16 +25,12 @@ module.exports = {
             {
                 test: /\.json$/,
                 loader: 'json-loader'
-            }
+            },
+            { test: /\.(png|jpg)$/,
+              loader: 'url-loader?limit=250000000' }
         ]
     },
     resolve: {
         extensions: ['.js', '.json']
-    },
-    node: {
-        console: 'mock',
-        fs: 'empty',
-        net: 'empty',
-        tls: 'empty'
     }
 };

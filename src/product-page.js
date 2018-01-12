@@ -12,14 +12,14 @@ import './online-grocery.scss';
 
 var tabNames = ['Produce', 'Deli & Dairy', 'Bread, Pasta & Rice', 'Packaged & Canned',
     'Condiments, Spreads & Sauces', 'Frozen Foods', 'Beverages'];
-var view = "viewProduct"
+
 class ProductViewPage extends Component{
   render(){
     return(
     <div>
-        <img className='logo-style' src={'../../src/images/SAFEWAY.png'}/>
-        <img className='banner-style' src={'../../src/images/advertisement1.png'}/>
-        <TopNav tabNames={tabNames} view={view}/>
+        <img className='logo-style' src={require('../public/images/SAFEWAY.png')}/>
+        <img className='banner-style' src={require('../public/images/advertisement1.png')}/>
+        <TopNav tabNames={tabNames}/>
         <ProductPage/>
     </div>
     )

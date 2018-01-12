@@ -14,7 +14,7 @@ export default class ProductCardExpanded extends React.Component {
                 <div className='product-card-size'>{this.props.size}</div>
                 <div className='product-card-buttons'>
                     <div className='product-card-price'>${this.props.price}</div>
-                    <img className='product-card-add-to-cart' src={'../../../src/images/trolley-clipart.png'}/>
+                    <img className='product-card-add-to-cart' src={require('../../../public/images/trolley-clipart.png')}/>
                 </div>
             </div>
         )

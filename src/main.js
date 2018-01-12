@@ -8,8 +8,9 @@ import ProductViewPage from './product-page'
 render(
   <Router>
   	<Switch>
-    	<Route exact path="/" component={HomePage}/>
-      <Route path="/product" component={ProductViewPage}/>
+    	<Route exact path='/' component={HomePage}/>
+      <Route path='/:category' component={HomePage}/>
+      <Route path='/:category/:product' component={ProductViewPage}/>
   	</Switch>
   </Router>,
 	document.getElementById('main')
