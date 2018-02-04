@@ -1,7 +1,7 @@
 import React from 'react'
-import CartDropdown from './cart-dropdown'
+import OrderSummary from './order-summary'
 import { connect } from 'react-redux'
-import { cartActionCreators } from '../../reducers/cart/cart-actions';
+import { cartActionCreators } from '../../../reducers/cart/cart-actions';
 
 const mapStateToProps = function(state){
     return {
@@ -17,13 +17,13 @@ const mapDispatchToProps = function (dispatch) {
     }
 }
 
-class CartDropdownContainer extends React.Component {
+class OrderSummaryContainer extends React.Component {
     render() {
         return (
-            <CartDropdown {...this.props} />
+            <OrderSummary {...this.props} />
         )
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartDropdownContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(OrderSummaryContainer)
 

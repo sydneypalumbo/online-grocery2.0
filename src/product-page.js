@@ -22,7 +22,7 @@ class ProductViewPage extends React.Component{
     return(
     <div>
         <CartDropdownContainer/>
-        <img className='logo-style' src={'../../src/images/ubelsgrocerybanner.png'}/>
+        <img className='logo-style' src={'../../src/images/howesgrocerybanner.png'}/>
         <TopNav tabNames={tabNames} view={view}/>
         <ProductCardExpandedContainer {...product}/>
     </div>

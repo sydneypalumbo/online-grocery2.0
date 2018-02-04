@@ -1,0 +1,71 @@
+@import "../../../base/base";
+
+.order-summary {
+  padding: 0 10px 10px 10px;
+  width: 50%;
+
+  .order-item {
+    text-transform: capitalize;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 1px;
+    box-shadow: 2px 2px 5px $dark-shadow;
+    position: relative;
+
+    .order-item-detail {
+      position: absolute;
+      right: 45px;
+
+      .order-item-quantity {
+        text-transform: lowercase;
+        font-size: 10px;
+      }
+
+      .order-item-price {
+        color: $price-green;
+      }
+    }
+
+    .order-delete-item {
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      position: absolute;
+      right: 25px;
+      cursor: pointer;
+    }
+
+     &.order-final-total {
+       background-color: $price-green;
+       color: white;
+       .order-detail {
+         position: absolute;
+         right: 45px;
+       }
+     }
+  }
+  .order-header-bar {
+    color: $price-green;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid $price-green;
+    padding-bottom: 5px;
+    margin: 10px 0;
+  }
+
+  .checkout-button {
+    background-color: $cart-color;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    box-shadow: 2px 2px 5px $dark-shadow;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: #eb1bfe;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import '../../../base/base';
+
+.payment-details {
+  padding: 0 10px 10px 10px;
+  width: 50%;
+
+  .payment-header-bar {
+    color: $price-green;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid $price-green;
+    padding-bottom: 5px;
+    margin: 10px 0;
+  }
+
+  .payment-details-section {
+    font-size: 12px;
+    display: inline-block;
+    padding: 5px 10px;
+    width: 45%;
+    .payment-input {
+      display: block;
+      width: 100%;
+    }
+  }
+}

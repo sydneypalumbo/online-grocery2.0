@@ -45,8 +45,8 @@ export default class ProductCard extends React.Component {
                     <div className='product-card-name'>{this.props.name}</div>
                 </Link>
                 <div className='product-card-size'>{this.props.size}</div>
+                <div className='product-card-price'>${parseFloat(Math.round(this.props.price * 100) / 100).toFixed(2)}</div>
                 <div className='product-card-buttons'>
-                    <div className='product-card-price'>${this.props.price}</div>
                     <img onClick={this.handleAddToCart} className='product-card-add-to-cart'
                          src={'../../../src/images/trolley-clipart.png'}/>
                     <div className='product-card-quantity'>

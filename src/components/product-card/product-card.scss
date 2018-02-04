@@ -16,7 +16,7 @@
   .product-card-name {
     font-size: 16px;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     color: black;
     padding-right: 7px;
     margin: 5px 0;
@@ -24,22 +24,22 @@
   }
 
   .product-card-size {
-    display: block;
+    display: inline-block;
     font-size: 12px;
+  }
+
+  .product-card-price {
+    color: $price-green;
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: 600;
   }
 
   .product-card-buttons {
     display: flex;
     justify-content: flex-start;
 
-    .product-card-price {
-      padding: 7px 5px;
-      color: $price-green;
-      width: 50px;
-      border: 1px solid $price-green;
-      text-align: center;
-      margin: 5px 5px 0 0;
-    }
+
 
     .product-card-add-to-cart {
       width: auto;
@@ -77,4 +77,8 @@
       }
     }
   }
+}
+
+a {
+  text-decoration: none;
 }
