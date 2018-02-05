@@ -11,7 +11,11 @@ export default class CheckoutPage extends React.Component {
                 <img className='logo-style' src={'../../src/images/howesgrocerybanner.png'}/>
                 <div className='checkout-title'>Checkout</div>
                 <Route render={({history}) => (
-                    <form onSubmit={() => {history.push('/thank-you')}} className='checkout-sections'>
+                    <form onSubmit={() => {
+                        history.push('/thank-you')
+                        this.props.handleClearCart()
+                    }}
+                          className='checkout-sections'>
                         <PaymentDetails/>
                         <OrderSummaryContainer/>
                     </form>

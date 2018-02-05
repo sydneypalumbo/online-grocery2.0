@@ -1,5 +1,6 @@
 import React from 'react'
 import './thank-you-page.scss'
+import { Link } from 'react-router-dom'
 
 const staticText = {
     header: "Thank You For Your Order!",
@@ -14,7 +15,9 @@ export default class ThankYouPage extends React.Component {
                 <img className='logo-style' src={'../../src/images/howesgrocerybanner.png'}/>
                 <div className='thank-you-header'>{staticText.header}</div>
                 <div className='thank-you-subheader'>{staticText.subheader}</div>
-                <button className='back-to-shopping-button bold'>Back to Shopping</button>
+                <Link to='/' className='no-underline'>
+                    <button className='back-to-shopping-button bold'>Back to Shopping</button>
+                </Link>
             </div>
         )
     }

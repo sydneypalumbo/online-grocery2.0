@@ -4,6 +4,7 @@ const initialCartState = {count: 0, items:[], price: 0}
 
 export default function cartReducer(state = initialCartState, action) {
     switch(action.type) {
+
         case(cartActionTypes.ADD_TO_CART):
             const itemAlreadyInCart = state.items.findIndex((item) => {
                 return item.name == action.product.name
@@ -27,8 +28,8 @@ export default function cartReducer(state = initialCartState, action) {
                 ],
                 price: state.price + action.product.price * action.product.quantity
             })
+
         case(cartActionTypes.REMOVE_FROM_CART):
-            console.log(action.product.quantity)
             const productIndex = state.items.indexOf(action.product)
             const newitems = Object.assign([], state.items)
             if (productIndex > -1) {
@@ -39,6 +40,10 @@ export default function cartReducer(state = initialCartState, action) {
                 items: newitems,
                 price: state.price - action.product.price * action.product.quantity
             })
+
+        case(cartActionTypes.CLEAR_CART):
+            return initialCartState
+
         default:
             return state
     }
