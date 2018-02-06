@@ -14,7 +14,26 @@ const product = {
     src: "http://www.publix.com/images/products/300000/304781-600x600-A.jpg",
     price: 10,
     description: "Per 5 Crackers: 80 calories; 1 g sat fat (5% DV); 105 mg sodium (4% DV); 1 g sugars. Keep it going. 100% recycled paperboard. Please recycle this carton. Minimum 35% post-consumer content. You've got the stuff to make life rich. For these recipes and more, visit Ritzcrackers.com. Life's rich. SmartLabel. Visit us at: ritzcrackers.com or call weekdays: 1-800-622-4726. Please have package available. Made in Mexico.",
-    size: "13.7 oz (388 g)"
+    size: "13.7 oz (388 g)",
+    nutritionFacts: {
+        servingSize: "5 crackers",
+        servingCount: "20",
+        fatCalories: "60",
+        calories: "150",
+        totalFat: "10",
+        satFat: "2",
+        transFat: "1",
+        polyFat: null,
+        monoFat: null,
+        cholesterol: "0",
+        sodium: "50",
+        potassium: "40",
+        carbs: "22",
+        fiber: "2",
+        sugar: "14",
+        protein: "3",
+        vitamins: "0% Vitamin A 0% Vitamin C 4% Calcium 8% Iron"
+    }
 }
 
 class ProductViewPage extends React.Component{

@@ -1,5 +1,6 @@
 import React from 'react'
 import './product-card-expanded.scss'
+import NutritionLabel from '../nutrition-label/nutrition-label'
 
 export default class ProductCardExpanded extends React.Component {
 
@@ -53,6 +54,7 @@ export default class ProductCardExpanded extends React.Component {
                             <div className='product-card-expanded-quantity-change' onClick={this.addQuantity}>+</div>
                         </div>
                     </div>
+                    {this.props.nutritionFacts && <NutritionLabel {...this.props.nutritionFacts}/>}
                 </div>
             </div>
         )

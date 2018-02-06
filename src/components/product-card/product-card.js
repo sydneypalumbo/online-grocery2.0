@@ -40,7 +40,7 @@ export default class ProductCard extends React.Component {
 
         return (
             <div className='product-card'>
-                <Link to='/product'>
+                <Link to='/product' {...this.props}>
                     <img className='product-card-image' src={this.props.src}/>
                     <div className='product-card-name'>{this.props.name}</div>
                 </Link>
