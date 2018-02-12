@@ -13,6 +13,9 @@ const mapDispatchToProps = function (dispatch) {
     return {
         handleRemoveFromCart: (product) => {
             dispatch(cartActionCreators.removeFromCart(product))
+        },
+        handleClearCart: () => {
+            dispatch(cartActionCreators.clearCart())
         }
     }
 }

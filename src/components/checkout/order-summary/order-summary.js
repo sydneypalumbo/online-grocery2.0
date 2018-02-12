@@ -7,7 +7,8 @@ export default class OrderSummary extends React.Component{
         const listedItems = this.props.cart.items.map((item) => {
             return (
                 <div className='order-item'>
-                    <span>{item.name} </span>
+                    <img src={item.src} className='order-item-image'/>
+                    <div className='order-item-name'>{item.name} </div>
                     <span className='order-item-detail'>
                         {item.quantity > 1 &&
                         <span className='order-item-quantity'>{item.quantity} x </span>
@@ -20,14 +21,14 @@ export default class OrderSummary extends React.Component{
         })
         listedItems.push(
             <div className='order-item bold'>Subtotal
-                <span className='order-item-detail'>
+                <span className='order-item-detail normal-height'>
                     <span className='order-item-price bold'>${parseFloat(Math.round(this.props.cart.price * 100) / 100).toFixed(2)}</span>
                 </span>
             </div>
         )
         listedItems.push(
             <div className='order-item bold'>Sales tax (7.5%)
-                <span className='order-item-detail'>
+                <span className='order-item-detail normal-height'>
                     <span className='order-item-price'>${parseFloat(Math.round(this.props.cart.price * 100) * 0.075 / 100).toFixed(2)}</span>
                 </span>
             </div>
@@ -47,7 +48,7 @@ export default class OrderSummary extends React.Component{
                     Review Order
                 </div>
                 {this.listCartItems()}
-                <button className='checkout-button bold'>Complete Order</button>
+                <button type='submit' onClick={this.props.handleClearCart} className='checkout-button bold'>Complete Order</button>
             </div>
         )
     }
