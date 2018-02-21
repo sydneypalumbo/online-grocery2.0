@@ -8,6 +8,7 @@ const tabNames = ['Produce', 'Deli & Dairy', 'Bread, Pasta & Rice', 'Packaged & 
     'Condiments, Spreads & Sauces', 'Frozen Foods', 'Beverages'];
 
 var view = "viewProduct"
+var path = require('path')
 
 const product = {
     name: "Ritz Crackers",
@@ -41,7 +42,7 @@ class ProductViewPage extends React.Component{
     return(
     <div>
         <CartDropdownContainer/>
-        <img className='logo-style' src={'../../src/images/howesgrocerybanner.png'}/>
+        <img className='logo-style' src={`${path.join(__dirname, 'images/howesgrocerybanner.png')}`}/>
         <TopNav tabNames={tabNames} view={view}/>
         <ProductCardExpandedContainer {...product}/>
     </div>

@@ -2,6 +2,8 @@ import React from 'react'
 import './cart-dropdown.scss'
 import { Link } from 'react-router-dom';
 
+var path = require('path')
+
 export default class CartDropdown extends React.Component {
 
     constructor(props) {
@@ -56,7 +58,7 @@ export default class CartDropdown extends React.Component {
         )
         return (
             <div className='cart-button'>
-                <img className='cart-image' src={'../../../src/images/trolley-clipart-white.png'} onClick={this.openCloseDropdown}/>
+                <img className='cart-image' src={`${path.join(__dirname, 'images/trolley-clipart-white.png')}`} onClick={this.openCloseDropdown}/>
                 <div className='cart-count'>{this.props.cart.count}</div>
                 {this.state.dropdownOpen && this.props.cart.items.length > 0 &&
                     <div style={{'max-height': this.state.windowHeight - 75}} className='cart-dropdown'>

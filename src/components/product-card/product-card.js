@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './product-card.scss'
 
+var path = require('path')
+
 export default class ProductCard extends React.Component {
 
     constructor(props) {
@@ -48,7 +50,7 @@ export default class ProductCard extends React.Component {
                 <div className='product-card-price bold'>${parseFloat(Math.round(this.props.price * 100) / 100).toFixed(2)}</div>
                 <div className='product-card-buttons'>
                     <img onClick={this.handleAddToCart} className='product-card-add-to-cart'
-                         src={'../../../src/images/trolley-clipart.png'}/>
+                         src={`${path.join(__dirname, 'images/trolley-clipart.png')}`}/>
                     <div className='product-card-quantity'>
                         <div className='product-card-quantity-change' onClick={this.subtractQuantity}>-</div>
                         {this.state.quantity}
@@ -57,7 +59,7 @@ export default class ProductCard extends React.Component {
                     <div className="tooltip--triangle" data-tooltip="The Guiding Stars® program evaluates the nutrient content of foods using nutrition data gleaned from the Nutrition Facts table and the ingredient list on product packaging. Click to learn more!">
                         <a href="https://guidingstars.com/what-is-guiding-stars/">
                             <img className='product-card-guiding-stars'
-                                 src={this.props.starSRC}/>
+                                 src={`${path.join(__dirname, 'images/' + this.props.stars + 'howestars.png')}`}/>
                         </a>
                     </div>
                 </div>

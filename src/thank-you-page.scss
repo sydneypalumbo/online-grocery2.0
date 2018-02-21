@@ -2,7 +2,6 @@
 
 .thank-you-page {
   text-align: center;
-  border-bottom: 1px dotted black;
 
   .thank-you-header {
     color: $price-green;
@@ -22,7 +21,7 @@
     color: white;
     border: none;
     padding: 10px;
-    margin: 10px 10px 175px 10px;
+    margin: 10px 10px 10px 10px;
     border-radius: 5px;
     box-shadow: 2px 2px 5px $dark-shadow;
     cursor: pointer;

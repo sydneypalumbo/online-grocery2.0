@@ -2,6 +2,8 @@ import React from 'react'
 import './product-card-expanded.scss'
 import NutritionLabel from '../nutrition-label/nutrition-label'
 
+var path = require('path')
+
 export default class ProductCardExpanded extends React.Component {
 
     constructor(props) {
@@ -47,7 +49,7 @@ export default class ProductCardExpanded extends React.Component {
                     <div className='product-card-expanded-price bold'>${parseFloat(Math.round(this.props.price * 100) / 100).toFixed(2)}</div>
                     <div className='product-card-expanded-buttons'>
                         <img className='product-card-expanded-add-to-cart' onClick={this.handleAddToCart}
-                             src={'../../../src/images/trolley-clipart.png'}/>
+                             src={`${path.join(__dirname, 'images/trolley-clipart.png')}`}/>
                         <div className='product-card-expanded-quantity'>
                             <div className='product-card-expanded-quantity-change' onClick={this.subtractQuantity}>-</div>
                             {this.state.quantity}

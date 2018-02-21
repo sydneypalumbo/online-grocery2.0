@@ -1,7 +1,9 @@
+var path = require('path')
+
 module.exports = {
     entry: './src/main.js',
     output: {
-        path: __dirname,
+        path: path.join(__dirname, '/build'),
         filename: 'online-grocery.bundle.js'
     },
     module: {
