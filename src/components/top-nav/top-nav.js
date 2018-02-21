@@ -3,24 +3,11 @@ import Tab from '../tab/tab.js';
 import './top-nav.scss'
 
 export default class TopNav extends React.Component{
-    constructor (props){
-      super(props)
-      this.state={
-        category: "Produce"
-      }
-    }
 
-    selectTab(name) {
-      this.setState({
-        category: name
-      })
-    }
     render () {
-        let category = this.state.category;
-        let tabs = this.props.tabNames.map((name,i)=> {
-
+        let tabs = this.props.tabNames.map((name, i)=> {
             return (
-                <Tab tabName={name} category={category} key={i} selectTab={this.selectTab.bind(this, name)} />
+                <Tab onClick={() => this.props.handleSetCategory(i + 1)} tabName={name} index={i + 1} selected={this.props.selected}/>
             );
         });
         var title= "Viewing Product in "
@@ -33,7 +20,7 @@ export default class TopNav extends React.Component{
             <div className="top-nav">
                 {tabs}
             </div>
-            <div className= "title"> {title}{this.state.category} </div>
+            <div className= "title"> {title}{this.props.tabNames[this.props.selected - 1]} </div>
           </div>
         );
     }

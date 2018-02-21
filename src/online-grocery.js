@@ -15,8 +15,9 @@ class HomePage extends React.Component{
         <div>
             <CartDropdownContainer/>
             <img className='logo-style' src={`${path.join(__dirname, 'images/howesgrocerybanner.png')}`}/>
-            <TopNav tabNames={tabNames} view={view}/>
-            <ProductGrid/>
+            <TopNav tabNames={tabNames} handleSetCategory={this.props.handleSetCategory}
+                    selected={this.props.selected || 1} view={view}/>
+            <ProductGrid selected={this.props.selected || 1} />
         </div>
       )
   }

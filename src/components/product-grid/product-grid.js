@@ -118,8 +118,26 @@ const products = [
 
 export default class ProductGrid extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            products: []
+        }
+    }
+
+    componentDidMount() {
+        fetch(`/api/products`)
+            .then((response) => response.json())
+            .then((response) =>
+            {
+                this.setState({
+                products: response.products
+            })})
+    }
+
     render() {
-        let productCards = products.map((product,i) => {
+        let productCards = this.state.products.map((product,i) => {
             return (
                 <div key={i} className='product-grid-item'>
                     <ProductCardContainer {...product}/>

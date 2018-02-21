@@ -2,7 +2,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import HomePage from './online-grocery'
+import HomePage from './online-grocery-container'
 import ProductPage from './product-page'
 import CheckoutPage from './checkout-page'
 import ThankYouPage from './thank-you-page'
