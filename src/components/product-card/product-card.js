@@ -39,10 +39,9 @@ export default class ProductCard extends React.Component {
     }
 
     render() {
-
         return (
             <div className='product-card'>
-                <Link to='/product' {...this.props}>
+                <Link to={{ pathname: '/product', state: { product: this.props} }}>
                     <img className='product-card-image' src={this.props.imageSrc}/>
                     <div className='product-card-name'>{this.props.name}</div>
                 </Link>

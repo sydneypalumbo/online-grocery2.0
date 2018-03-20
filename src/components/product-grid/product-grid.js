@@ -137,7 +137,23 @@ export default class ProductGrid extends React.Component {
     }
 
     render() {
-        let productCards = this.state.products.map((product,i) => {
+        let selected = this.props.selected
+        if (selected == 1){
+          selected =8;
+        }
+        if (selected == 2){
+          selected =8;
+        }
+        var products= this.state.products.filter(function(product){
+          let category= product.category;
+          if(category == selected){
+            return true;
+          }
+          else{
+            return false;
+          }
+        })
+        let productCards = products.map((product,i) => {
             return (
                 <div key={i} className='product-grid-item'>
                     <ProductCardContainer {...product}/>

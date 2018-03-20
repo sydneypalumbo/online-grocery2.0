@@ -38,7 +38,11 @@ const product = {
 }
 
 class ProductViewPage extends React.Component{
+  constructor(props) {
+          super(props);
+  }
   render(){
+    const product = this.props.location.state
     return(
     <div>
         <CartDropdownContainer/>
