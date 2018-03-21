@@ -37,11 +37,30 @@ export default class ProductCard extends React.Component {
             quantity: currentQuantity + 1
         })
     }
-
     render() {
+      let product= this.props
+      let nutritionFacts = {
+            calories: this.props.calories,
+            servingSize: this.props.servingSize,
+            servingCount: this.props.servingCount,
+            fatCalories: this.props.caloriesFromFat,
+            totalFat: this.props.totalFat,
+            satFat: this.props.saturatedFat,
+            transFat: this.props.transFat,
+            polyFat: this.props.polyFat,
+            monoFat: this.props.monoFat,
+            cholesterol: this.props.cholesterol,
+            sodium: this.props.sodium,
+            potassium: this.props.potassium,
+            carbs: this.props.carbs,
+            fiber: this.props.fiber,
+            sugar: this.props.sugar,
+            protein: this.props.protein,
+            vitamins: this.props.vitamins
+      }
         return (
             <div className='product-card'>
-                <Link to={{ pathname: '/product', state: { product: this.props} }}>
+                <Link to={{ pathname: '/product', state: {nutritionFacts: nutritionFacts, description:this.props.description, size: this.props.size, price:this.props.price, name:this.props.name, src:this.props.imageSrc}}}>
                     <img className='product-card-image' src={this.props.imageSrc}/>
                     <div className='product-card-name'>{this.props.name}</div>
                 </Link>

@@ -8,7 +8,7 @@ var path = require('path')
 const tabNames = ['Produce', 'Deli & Dairy', 'Bread, Pasta & Rice', 'Packaged & Canned',
 'Condiments, Spreads & Sauces', 'Frozen Foods', 'Beverages'];
 
-var view = "viewAll"
+
 class HomePage extends React.Component{
   render(){
       return(
@@ -16,7 +16,7 @@ class HomePage extends React.Component{
             <CartDropdownContainer/>
             <img className='logo-style' src={`${path.join(__dirname, 'images/howesgrocerybanner.png')}`}/>
             <TopNav tabNames={tabNames} handleSetCategory={this.props.handleSetCategory}
-                    selected={this.props.selected || 1} view={view}/>
+                    selected={this.props.selected || 1} />
             <ProductGrid selected={this.props.selected || 1} />
         </div>
       )
