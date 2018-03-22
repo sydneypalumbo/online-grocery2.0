@@ -16,7 +16,7 @@ export default class TopNav extends React.Component{
                 {tabs}
             </div>
               {this.props.tabNames[this.props.selected - 1] &&
-                  <div className= "title"> {title}{this.props.tabNames[this.props.selected - 1]} </div>}
+                  <div className= "title"> {this.props.tabNames[this.props.selected - 1]} </div>}
           </div>
         );
     }
