@@ -41,11 +41,11 @@ export default class ProductCardExpanded extends React.Component {
     render() {
         return (
             <div className='product-card-expanded'>
-                <img className='product-card-expanded-image' src={this.props.src}/>
+                <img className='product-card-expanded-image' src={this.props.imageSrc}/>
                 <div className='product-card-expanded-right-section'>
                     <div className='product-card-expanded-name'>{this.props.name}</div>
-                    <div className='product-card-expanded-description'>{this.props.description}</div>
                     <div className='product-card-expanded-size'>{this.props.size}</div>
+
                     <div className='product-card-expanded-price bold'>${parseFloat(Math.round(this.props.price * 100) / 100).toFixed(2)}</div>
                     <div className='product-card-expanded-buttons'>
                         <img className='product-card-expanded-add-to-cart' onClick={this.handleAddToCart}
@@ -56,7 +56,27 @@ export default class ProductCardExpanded extends React.Component {
                             <div className='product-card-expanded-quantity-change' onClick={this.addQuantity}>+</div>
                         </div>
                     </div>
-                    {this.props.nutritionFacts && <NutritionLabel {...this.props.nutritionFacts}/>}
+                    <div className='product-card-expanded-description'>{this.props.description}</div>
+                    {this.props.servingSize && <NutritionLabel nutritionFacts={{
+                        servingSize: this.props.servingSize,
+                        servings: this.props.servings,
+                        caloriesFromFat: this.props.caloriesFromFat,
+                        calories: this.props.calories,
+                        totalFat: this.props.totalFat,
+                        saturatedFat: this.props.saturatedFat,
+                        transFat: this.props.transFat,
+                        polyFat: this.props.polyFat,
+                        cholesterol: this.props.cholesterol,
+                        sodium: this.props.sodium,
+                        potassium: this.props.potassium,
+                        carbs: this.props.carbs,
+                        fiber: this.props.fiber,
+                        sugar: this.props.sugar,
+                        protein: this.props.protein,
+                        vitamins: this.props.vitamins,
+                    }}/>}
+                    <span className='product-card-expanded-ingredients bold'>INGREDIENTS: </span>
+                    <span className='product-card-expanded-ingredients'>{this.props.ingredients}</span>
                 </div>
             </div>
         )

@@ -7,7 +7,7 @@ export default class OrderSummary extends React.Component{
         const listedItems = this.props.cart.items.map((item) => {
             return (
                 <div className='order-item'>
-                    <img src={item.src} className='order-item-image'/>
+                    <img src={item.imageSrc} className='order-item-image'/>
                     <div className='order-item-name'>{item.name} </div>
                     <span className='order-item-detail'>
                         {item.quantity > 1 &&

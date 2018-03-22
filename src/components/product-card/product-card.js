@@ -41,12 +41,12 @@ export default class ProductCard extends React.Component {
     render() {
         return (
             <div className='product-card'>
-                <Link to={{ pathname: '/product', state: { product: this.props} }}>
-                    <img className='product-card-image' src={this.props.imageSrc}/>
-                    <div className='product-card-name'>{this.props.name}</div>
+                <Link to={{ pathname: '/product', state: { product: this.props.product} }}>
+                    <img className='product-card-image' src={this.props.product.imageSrc}/>
+                    <div className='product-card-name'>{this.props.product.name}</div>
                 </Link>
-                <div className='product-card-size'>{this.props.size}</div>
-                <div className='product-card-price bold'>${parseFloat(Math.round(this.props.price * 100) / 100).toFixed(2)}</div>
+                <div className='product-card-size'>{this.props.product.size}</div>
+                <div className='product-card-price bold'>${parseFloat(Math.round(this.props.product.price * 100) / 100).toFixed(2)}</div>
                 <div className='product-card-buttons'>
                     <img onClick={this.handleAddToCart} className='product-card-add-to-cart'
                          src={`${path.join(__dirname, 'images/trolley-clipart.png')}`}/>
@@ -58,7 +58,7 @@ export default class ProductCard extends React.Component {
                     <div className="tooltip--triangle" data-tooltip="The Guiding Stars® program evaluates the nutrient content of foods using nutrition data gleaned from the Nutrition Facts table and the ingredient list on product packaging. Click to learn more!">
                         <a href="https://guidingstars.com/what-is-guiding-stars/">
                             <img className='product-card-guiding-stars'
-                                 src={`${path.join(__dirname, 'images/' + this.props.stars + 'howestars.png')}`}/>
+                                 src={`${path.join(__dirname, 'images/' + this.props.product.stars + 'howestars.png')}`}/>
                         </a>
                     </div>
                 </div>
