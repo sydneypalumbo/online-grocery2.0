@@ -39,6 +39,7 @@ export default class ProductCardExpanded extends React.Component {
     }
 
     render() {
+        console.log(this.props.nutritionFacts)
         return (
             <div className='product-card-expanded'>
                 <img className='product-card-expanded-image' src={this.props.imageSrc}/>

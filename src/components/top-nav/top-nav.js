@@ -10,11 +10,6 @@ export default class TopNav extends React.Component{
                 <Tab onClick={() => this.props.handleSetCategory(i + 1)} tabName={name} index={i + 1} selected={this.props.selected}/>
             );
         });
-        var title= "Viewing Product in "
-        if(this.props.view == "viewAll"){
-          title = "Viewing All "
-        }
-
         return (
           <div>
             <div className="top-nav">

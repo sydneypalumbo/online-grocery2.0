@@ -37,7 +37,6 @@ export default class ProductCard extends React.Component {
             quantity: currentQuantity + 1
         })
     }
-
     render() {
         return (
             <div className='product-card'>
