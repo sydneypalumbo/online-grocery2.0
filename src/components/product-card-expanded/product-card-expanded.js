@@ -42,22 +42,30 @@ export default class ProductCardExpanded extends React.Component {
         console.log(this.props.nutritionFacts)
         return (
             <div className='product-card-expanded'>
-                <img className='product-card-expanded-image' src={this.props.imageSrc}/>
-                <div className='product-card-expanded-right-section'>
-                    <div className='product-card-expanded-name'>{this.props.name}</div>
-                    <div className='product-card-expanded-size'>{this.props.size}</div>
+                <div>
+                  <div className='product-card-expanded-name'>{this.props.name}</div>
+                  <div className='product-card-expanded-size'>{this.props.size}</div>
 
-                    <div className='product-card-expanded-price bold'>${parseFloat(Math.round(this.props.price * 100) / 100).toFixed(2)}</div>
-                    <div className='product-card-expanded-buttons'>
-                        <img className='product-card-expanded-add-to-cart' onClick={this.handleAddToCart}
-                             src={`${path.join(__dirname, 'images/trolley-clipart.png')}`}/>
-                        <div className='product-card-expanded-quantity'>
-                            <div className='product-card-expanded-quantity-change' onClick={this.subtractQuantity}>-</div>
-                            {this.state.quantity}
-                            <div className='product-card-expanded-quantity-change' onClick={this.addQuantity}>+</div>
-                        </div>
+                  <div className='product-card-expanded-price bold'>${parseFloat(Math.round(this.props.price * 100) / 100).toFixed(2)}</div>
+                  <div className='product-card-expanded-buttons'>
+                      <img className='product-card-expanded-add-to-cart' onClick={this.handleAddToCart}
+                           src={`${path.join(__dirname, 'images/trolley-clipart.png')}`}/>
+                      <div className='product-card-expanded-quantity'>
+                          <div className='product-card-expanded-quantity-change' onClick={this.subtractQuantity}>-</div>
+                          {this.state.quantity}
+                          <div className='product-card-expanded-quantity-change' onClick={this.addQuantity}>+</div>
+                      </div>
+                  </div>
+                  <div className='product-card-expanded-description'>{this.props.description}</div>
+                  <img className='product-card-expanded-image' src={this.props.imageSrc}/>
+                </div>
+                <div className='product-card-expanded-right-section'>
+                    <div className="tooltip--triangle" data-tooltip="The Guiding Stars® program evaluates the nutrient content of foods using nutrition data gleaned from the Nutrition Facts table and the ingredient list on product packaging. Click to learn more!">
+                        <a href="https://guidingstars.com/what-is-guiding-stars/">
+                            <img className='product-card-guiding-stars'
+                                 src={`${path.join(__dirname, 'images/' + this.props.stars + 'howestars.png')}`}/>
+                        </a>
                     </div>
-                    <div className='product-card-expanded-description'>{this.props.description}</div>
                     {this.props.servingSize && <NutritionLabel nutritionFacts={{
                         servingSize: this.props.servingSize,
                         servings: this.props.servings,
