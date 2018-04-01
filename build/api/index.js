@@ -16,4 +16,17 @@ api.get('/products', (req, res, next)=>{
 
   });
 })
+api.get('/produce', (req, res, next)=>{
+  Products.getProduce(function (err, rows){
+    if(err)
+    {
+    res.json(err);
+    }
+    else
+    {
+    res.json(rows);
+    }
+
+  });
+})
 module.exports = api
