@@ -1,6 +1,7 @@
 import React from 'react'
 import './product-grid.scss'
 import ProductCardContainer from '../product-card/product-card-container'
+import axios from 'axios';
 
 export default class ProductGrid extends React.Component {
 
@@ -13,14 +14,16 @@ export default class ProductGrid extends React.Component {
     }
 
     componentDidMount() {
-        fetch(`/api/products`)
-            .then((response) => response.json())
-            .then((response) =>
-            {
+        axios.get('/products')
+        .then(res => {
                 this.setState({
-                products: response.products
-            })})
-    }
+                  products: res.data
+                })
+        })
+        .catch(err => {
+              console.log(err)
+        })
+      }
 
     render() {
         let selected = this.props.selected

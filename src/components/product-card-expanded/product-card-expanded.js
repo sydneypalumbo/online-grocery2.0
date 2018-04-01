@@ -56,7 +56,6 @@ export default class ProductCardExpanded extends React.Component {
                           <div className='product-card-expanded-quantity-change' onClick={this.addQuantity}>+</div>
                       </div>
                   </div>
-                  <div className='product-card-expanded-description'>{this.props.description}</div>
                   <img className='product-card-expanded-image' src={this.props.imageSrc}/>
                 </div>
                 <div className='product-card-expanded-right-section'>
@@ -86,6 +85,7 @@ export default class ProductCardExpanded extends React.Component {
                     }}/>}
                     <span className='product-card-expanded-ingredients bold'>INGREDIENTS: </span>
                     <span className='product-card-expanded-ingredients'>{this.props.ingredients}</span>
+                    <div className='product-card-expanded-description'>{this.props.description}</div>
                 </div>
             </div>
         )

@@ -21,13 +21,6 @@
       margin: 5px 0;
     }
 
-    .product-card-expanded-description {
-      font-size: 14px;
-      display: inline-block;
-      padding-right: 7px;
-      margin: 5px 0;
-    }
-
     .product-card-expanded-ingredients {
       font-size: 14px;
       padding-right: 7px;
@@ -92,7 +85,12 @@
   a {
     text-decoration: none;
   }
-
+  .product-card-expanded-description {
+    font-size: 14px;
+    display: inline-block;
+    padding-right: 7px;
+    margin: 5px 0;
+  }
   .product-card-guiding-stars {
     width: auto;
     height: 40px;
