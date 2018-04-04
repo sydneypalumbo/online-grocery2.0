@@ -6,6 +6,7 @@ import HomePage from './online-grocery-container'
 import ProductViewPage from './product-page'
 import CheckoutPage from './checkout-page'
 import ThankYouPage from './thank-you-page'
+import SessionIDPage from './session-id-page'
 import store from './reducers/createStore'
 import { Provider } from 'react-redux'
 
@@ -13,7 +14,8 @@ render(
 	<Provider store={store}>
 		<Router>
 			<Switch>
-				<Route exact path="/" component={HomePage}/>
+				<Route exact path="/" component={SessionIDPage}/>
+				<Route path= "/home"component={HomePage} />
 			  <Route path="/product" component={ProductViewPage}/>
 				<Route path="/checkout" component={CheckoutPage}/>
 				<Route path="/thank-you" component={ThankYouPage}/>

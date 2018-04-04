@@ -5,7 +5,8 @@ var api = require('./api')
 var db = require('./db')
 var bodyParser = require('body-parser');
 var app = express();
-
+var cors = require('cors');
+app.use(cors());
 
 app.use(express.static('build'));
 
