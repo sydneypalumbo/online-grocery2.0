@@ -2,6 +2,13 @@ import React from 'react'
 import ProductCardExpanded from './product-card-expanded'
 import { connect } from 'react-redux'
 import { cartActionCreators } from '../../reducers/cart/cart-actions';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from "react-router-dom";
 
 const mapDispatchToProps = function (dispatch) {
     return {
