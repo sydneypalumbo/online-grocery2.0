@@ -1,20 +1,11 @@
 import React from 'react'
 import './product-card-expanded.scss'
 import NutritionLabel from '../nutrition-label/nutrition-label'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
-} from "react-router-dom";
 
 var path = require('path')
 
 export default class ProductCardExpanded extends React.Component {
-    static contextTypes = {
-      router: () => true, // replace with PropTypes.object if you use them
-    }
+
     constructor(props) {
         super(props)
 
@@ -26,6 +17,7 @@ export default class ProductCardExpanded extends React.Component {
         this.subtractQuantity = this.subtractQuantity.bind(this)
         this.addQuantity = this.addQuantity.bind(this)
     }
+
     handleAddToCart() {
         this.props.handleAddToCart(this.props, this.state.quantity)
     }
@@ -50,7 +42,6 @@ export default class ProductCardExpanded extends React.Component {
         console.log(this.props.nutritionFacts)
         return (
           <div>
-          <div className = "back-button" onClick={this.context.router.history.goBack}>"Go Back" <div/>
             <div className='product-card-expanded'>
                 <div>
                   <div className='product-card-expanded-name'>{this.props.name}</div>

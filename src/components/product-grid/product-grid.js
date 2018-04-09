@@ -45,7 +45,7 @@ export default class ProductGrid extends React.Component {
         let productCards = products.map((product,i) => {
             return (
                 <div key={i} className='product-grid-item'>
-                    <ProductCardContainer product={product}/>
+                    <ProductCardContainer sessionID={this.props.sessionID} product={product}/>
                 </div>
             )
         })

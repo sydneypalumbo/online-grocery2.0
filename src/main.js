@@ -15,10 +15,10 @@ render(
 		<Router>
 			<Switch>
 				<Route exact path="/" component={SessionIDPage}/>
-				<Route path= "/home"component={HomePage} />
-			  <Route path="/product" component={ProductViewPage}/>
-				<Route path="/checkout" component={CheckoutPage}/>
-				<Route path="/thank-you" component={ThankYouPage}/>
+					<Route path= "/home"component={HomePage} />
+				  <Route path="/product" component={ProductViewPage}/>
+					<Route path="/checkout" component={CheckoutPage}/>
+					<Route path="/thank-you" component={ThankYouPage}/>
 			</Switch>
 		</Router>
 	</Provider>,

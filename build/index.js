@@ -15,6 +15,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', api)
 
+app.get('*', function (request, response){
+    response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+})
+
 app.use(function(err, req, res, next) {
   console.log('there was a problem', err);
   res

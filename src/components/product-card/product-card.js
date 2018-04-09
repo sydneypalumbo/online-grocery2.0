@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import './product-card.scss'
-
+import axios from 'axios';
 var path = require('path')
 
 export default class ProductCard extends React.Component {
@@ -20,15 +20,32 @@ export default class ProductCard extends React.Component {
 
     handleAddToCart() {
         this.props.handleAddToCart(this.props, this.state.quantity)
+        let addedToCart = "" + this.state.quantity
+        console.log(this.props.sessionID)
+        axios.put('/add', {
+          sessionID: this.props.sessionID,
+          addedToCart: addedToCart
+        })
+        .then(response => {
+        	console.log(response)
+        })
     }
 
     subtractQuantity() {
+
         const currentQuantity = this.state.quantity
         if (currentQuantity > 1) {
             this.setState({
                 quantity: currentQuantity - 1
             })
         }
+        axios.put('/subtract', {
+          sessionID:this.state.value,
+          addedToCart: ""+ this.state.name + ": "+this.state.quantity
+        })
+        .then(response => {
+        	console.log(response)
+        })
     }
 
     addQuantity() {

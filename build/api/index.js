@@ -57,15 +57,15 @@ api.post('/user', (req, res, next)=>{
 
   });
 })
-api.put('/:id', (req, res, next)=>{
-  Users.addUser(req.params.id, req.body, function (err, rows){
+api.put('/add', (req, res, next)=>{
+  Users.updateUserAddToCart(req.body, function (err, count){
     if(err)
     {
     res.json(err);
     }
     else
     {
-    res.json(rows);
+    res.json(req.body);
     }
 
   });

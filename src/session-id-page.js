@@ -22,7 +22,6 @@ class SessionIDPage extends React.Component{
     this.setState({value: event.target.value});
   }
   handleSubmit(event){
-    console.log(this.state.value)
     event.preventDefault()
     axios.post('/user', {
       sessionID:this.state.value
@@ -31,7 +30,10 @@ class SessionIDPage extends React.Component{
     .then(response => {
     	console.log(response)
     })
-    .then(this.props.history.push('/home'))
+    .then(this.props.history.push({
+      pathname: '/home',
+      state: {sessionID: this.state.value}
+    }))
     .catch(error => {
         console.log(error)
     });
