@@ -20,14 +20,14 @@ export default class ProductCard extends React.Component {
 
     handleAddToCart() {
         this.props.handleAddToCart(this.props, this.state.quantity)
-        let addedToCart = "product: " + this.state.name + ", quantity:"+ this.state.quantity + ". "
-        console.log(this.props.sessionID)
-        axios.put('/add', {
-          sessionID: this.props.sessionID,
-          addedToCart: addedToCart
+        axios.post('/user', {
+          sessionID:this.props.sessionID,
+          actionType: "add",
+          product: this.props.product.name,
+          quantity: this.state.quantity
         })
         .then(response => {
-        	console.log(response)
+          console.log(response)
         })
     }
 
@@ -39,13 +39,6 @@ export default class ProductCard extends React.Component {
                 quantity: currentQuantity - 1
             })
         }
-        axios.put('/subtract', {
-          sessionID:this.state.value,
-          addedToCart: ""+ this.state.name + ": "+this.state.quantity
-        })
-        .then(response => {
-        	console.log(response)
-        })
     }
 
     addQuantity() {

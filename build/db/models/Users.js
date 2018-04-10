@@ -6,7 +6,7 @@ var Users = {
   },
   addUser: function(User, callback){
     console.log(User.sessionID)
-    return db.query("INSERT into users values(?,?,?,?,?,?)", ['default', User.sessionID, "", "", "", ""], callback)
+    return db.query("INSERT into users values(?,?,?,?,?)", ['default', User.sessionID, User.actionType, User.product, User.quantity], callback)
   },
   updateUserAddToCart: function(User, callback){
     console.log(User.sessionID + " "+ User.addedToCart)

@@ -20,10 +20,11 @@ export default class ProductCardExpanded extends React.Component {
 
     handleAddToCart() {
         this.props.handleAddToCart(this.props, this.state.quantity)
-        let addedToCart = "product: " + this.state.name + ", quantity:"+ this.state.quantity + ". "
-        axios.put('/add', {
-          sessionID: this.props.sessionID,
-          addedToCart: addedToCart
+        axios.post('/user', {
+          sessionID:this.props.sessionID,
+          actionType: "add",
+          product: this.props.name,
+          quantity: this.state.quantity
         })
         .then(response => {
           console.log(response)

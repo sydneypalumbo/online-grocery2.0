@@ -23,20 +23,10 @@ class SessionIDPage extends React.Component{
   }
   handleSubmit(event){
     event.preventDefault()
-    axios.post('/user', {
-      sessionID:this.state.value
-
-    })
-    .then(response => {
-    	console.log(response)
-    })
-    .then(this.props.history.push({
+    this.props.history.push({
       pathname: '/home',
       state: {sessionID: this.state.value}
-    }))
-    .catch(error => {
-        console.log(error)
-    });
+    })
 
   }
   render(){
