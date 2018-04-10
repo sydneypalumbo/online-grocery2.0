@@ -1,8 +1,37 @@
 import React from 'react'
 import './order-summary.scss'
-
+import axios from 'axios';
 export default class OrderSummary extends React.Component{
 
+
+    removeFromCart(product) {
+        this.props.handleRemoveFromCart(product)
+
+        axios.post('/user', {
+          sessionID:this.props.sessionID,
+          actionType: "delete",
+          product: product.name,
+          quantity: product.quantity
+        })
+        .then(response => {
+          console.log(response)
+        })
+    }
+    clearCart() {
+        this.props.handleClearCart
+        this.props.cart.items.forEach((item) =>{
+          axios.post('/user', {
+            sessionID:this.props.sessionID,
+            actionType: "checkout",
+            product: item.name,
+            quantity: item.quantity
+          })
+          .then(response => {
+            console.log(response)
+          })
+
+        })
+    }
     listCartItems() {
         const listedItems = this.props.cart.items.map((item) => {
             return (
@@ -15,7 +44,7 @@ export default class OrderSummary extends React.Component{
                         }
                         <span className='order-item-price'>${parseFloat(Math.round(item.price * 100) / 100).toFixed(2)} </span>
                     </span>
-                    <span onClick={() => this.props.handleRemoveFromCart(item)} className='order-delete-item'>X</span>
+                    <span onClick={() => this.removeFromCart(item)} className='order-delete-item'>X</span>
                 </div>
             )
         })
@@ -48,7 +77,7 @@ export default class OrderSummary extends React.Component{
                     Review Order
                 </div>
                 {this.listCartItems()}
-                <button type='submit' onClick={this.props.handleClearCart} className='checkout-button bold'>Complete Order</button>
+                <button type='submit' onClick={this.clearCart()} className='checkout-button bold'>Complete Order</button>
             </div>
         )
     }

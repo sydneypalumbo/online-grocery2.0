@@ -60,7 +60,8 @@ export default class CartDropdown extends React.Component {
             )
         })
         cartItems.unshift(
-            <Link to='/checkout' className='no-underline'>
+
+            <Link to={{ pathname: '/checkout', state: { sessionID: this.props.sessionID} }} className='no-underline'>
                 <div className='cart-item cart-checkout-bar'>Checkout
                     <span className='cart-detail' >Total: ${parseFloat(Math.round(this.props.cart.price * 100) / 100).toFixed(2)}</span>
                 </div>
@@ -71,7 +72,7 @@ export default class CartDropdown extends React.Component {
                 <img className='cart-image' src={`${path.join(__dirname, 'images/trolley-clipart-white.png')}`} onClick={this.openCloseDropdown}/>
                 <div className='cart-count'>{this.props.cart.count}</div>
                 {this.state.dropdownOpen && this.props.cart.items.length > 0 &&
-                    <div style={{'max-height': this.state.windowHeight - 75}} className='cart-dropdown'>
+                    <div style={{'maxHeight': this.state.windowHeight - 75}} className='cart-dropdown'>
                         {cartItems}
                     </div>
                 }
