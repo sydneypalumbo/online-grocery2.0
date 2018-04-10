@@ -70,4 +70,17 @@ api.put('/add', (req, res, next)=>{
 
   });
 })
+api.put('/delete', (req, res, next)=>{
+  Users.updateUserDeletedFromCart(req.body, function (err, count){
+    if(err)
+    {
+    res.json(err);
+    }
+    else
+    {
+    res.json(req.body);
+    }
+
+  });
+})
 module.exports = api

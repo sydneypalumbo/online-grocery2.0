@@ -1,7 +1,7 @@
 import React from 'react'
 import './product-card-expanded.scss'
 import NutritionLabel from '../nutrition-label/nutrition-label'
-
+import axios from 'axios';
 var path = require('path')
 
 export default class ProductCardExpanded extends React.Component {
@@ -20,6 +20,14 @@ export default class ProductCardExpanded extends React.Component {
 
     handleAddToCart() {
         this.props.handleAddToCart(this.props, this.state.quantity)
+        let addedToCart = "product: " + this.state.name + ", quantity:"+ this.state.quantity + ". "
+        axios.put('/add', {
+          sessionID: this.props.sessionID,
+          addedToCart: addedToCart
+        })
+        .then(response => {
+          console.log(response)
+        })
     }
 
     subtractQuantity() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import './cart-dropdown.scss'
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 var path = require('path')
 
 export default class CartDropdown extends React.Component {
@@ -32,6 +32,14 @@ export default class CartDropdown extends React.Component {
 
     removeFromCart(product) {
         this.props.handleRemoveFromCart(product)
+        let deletedFromCart= "product: " + product.name + ", quantity: " + product.quantity + ". ";
+        axios.put('/delete', {
+          sessionID: this.props.sessionID,
+          deletedFromCart: deletedFromCart
+        })
+        .then(response => {
+        	console.log(response)
+        })
     }
 
     render() {

@@ -8,9 +8,6 @@ var Users = {
     console.log(User.sessionID)
     return db.query("INSERT into users values(?,?,?,?,?,?)", ['default', User.sessionID, "", "", "", ""], callback)
   },
-  updateUserClicks: function(User, callback){
-    return db.query("UPDATE users set clicked=? where sessionID=?", [User.clicked, User.sessionID], callback)
-  },
   updateUserAddToCart: function(User, callback){
     console.log(User.sessionID + " "+ User.addedToCart)
     return db.query("UPDATE users set addedToCart= concat (addedToCart, ?) where sessionID=?", [User.addedToCart, User.sessionID], callback)

@@ -20,7 +20,7 @@ export default class ProductCard extends React.Component {
 
     handleAddToCart() {
         this.props.handleAddToCart(this.props, this.state.quantity)
-        let addedToCart = "" + this.state.quantity
+        let addedToCart = "product: " + this.state.name + ", quantity:"+ this.state.quantity + ". "
         console.log(this.props.sessionID)
         axios.put('/add', {
           sessionID: this.props.sessionID,
@@ -57,7 +57,7 @@ export default class ProductCard extends React.Component {
     render() {
         return (
             <div className='product-card'>
-                <Link to={{ pathname: '/product', state: { product: this.props.product} }}>
+                <Link to={{ pathname: '/product', state: { sessionID: this.props.sessionID, product: this.props.product} }}>
                     <img className='product-card-image' src={this.props.product.imageSrc}/>
                     <div className='product-card-name'>{this.props.product.name}</div>
                 </Link>
