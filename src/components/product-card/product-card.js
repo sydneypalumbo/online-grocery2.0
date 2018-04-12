@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import './product-card.scss'
-
+import axios from 'axios';
 var path = require('path')
 
 export default class ProductCard extends React.Component {
@@ -20,9 +20,19 @@ export default class ProductCard extends React.Component {
 
     handleAddToCart() {
         this.props.handleAddToCart(this.props.product, this.state.quantity)
+        axios.post('/user', {
+          sessionID:this.props.sessionID,
+          actionType: "add",
+          product: this.props.product.name,
+          quantity: this.state.quantity
+        })
+        .then(response => {
+          console.log(response)
+        })
     }
 
     subtractQuantity() {
+
         const currentQuantity = this.state.quantity
         if (currentQuantity > 1) {
             this.setState({
@@ -40,7 +50,7 @@ export default class ProductCard extends React.Component {
     render() {
         return (
             <div className='product-card'>
-                <Link to={{ pathname: '/product', state: { product: this.props.product} }}>
+                <Link to={{ pathname: '/product', state: { sessionID: this.props.sessionID, product: this.props.product} }}>
                     <img className='product-card-image' src={this.props.product.imageSrc}/>
                     <div className='product-card-name'>{this.props.product.name}</div>
                 </Link>

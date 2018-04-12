@@ -19,6 +19,7 @@ const mapDispatchToProps = function (dispatch) {
 
 class CartDropdownContainer extends React.Component {
     render() {
+        console.log(this.props.sessionID)
         return (
             <CartDropdown {...this.props} />
         )
@@ -26,4 +27,3 @@ class CartDropdownContainer extends React.Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartDropdownContainer)
-

@@ -1,25 +1,36 @@
 var express = require('express');
 var mySql = require('mysql');
 var path = require('path');
-var products = require('./api/products');
-
+var api = require('./api')
+var db = require('./db')
+var bodyParser = require('body-parser');
 var app = express();
+var cors = require('cors');
+app.use(cors());
 
 app.use(express.static('build'));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use('/', api)
+
+app.get('*', function (request, response){
+    response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+})
+
+app.use(function(err, req, res, next) {
+  console.log('there was a problem', err);
+  res
+    .status(err.status || 500)
+    .send(err.message || 'uh-oh.');
+})
+
 app.listen(80, function() {
-    console.log("Howe's Grocery Frontend App is running at localhost: 80")
+		  console.log('listening on port 80');
 });
 
-app.use(function(req, res, next) {
-    res.locals.connection = mySql.createConnection({
-        host: 'grocerydatabase.cfv9glgncba7.us-east-1.rds.amazonaws.com',
-        user: 'howesgrocery',
-        password: 'GuidingStars123',
-        database: 'products'
-    });
-    res.locals.connection.connect();
-    next();
-});
 
-app.use('/api/products', products)
+
+
+module.exports = app

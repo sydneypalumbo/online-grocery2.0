@@ -1,5 +1,8 @@
 @import "../../base/base";
-
+.go-back {
+  color: white;
+  background-color: #333333;
+}
 .product-card-expanded {
   padding: 10px 10%;
   text-transform: capitalize;
@@ -16,13 +19,6 @@
     .product-card-expanded-name {
       padding-top: 50px;
       font-size: 40px;
-      display: inline-block;
-      padding-right: 7px;
-      margin: 5px 0;
-    }
-
-    .product-card-expanded-description {
-      font-size: 14px;
       display: inline-block;
       padding-right: 7px;
       margin: 5px 0;
@@ -92,7 +88,12 @@
   a {
     text-decoration: none;
   }
-
+  .product-card-expanded-description {
+    font-size: 14px;
+    display: inline-block;
+    padding-right: 7px;
+    margin: 5px 0;
+  }
   .product-card-guiding-stars {
     width: auto;
     height: 40px;

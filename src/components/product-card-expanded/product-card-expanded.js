@@ -1,7 +1,7 @@
 import React from 'react'
 import './product-card-expanded.scss'
 import NutritionLabel from '../nutrition-label/nutrition-label'
-
+import axios from 'axios';
 var path = require('path')
 
 export default class ProductCardExpanded extends React.Component {
@@ -20,6 +20,15 @@ export default class ProductCardExpanded extends React.Component {
 
     handleAddToCart() {
         this.props.handleAddToCart(this.props, this.state.quantity)
+        axios.post('/user', {
+          sessionID:this.props.sessionID,
+          actionType: "add",
+          product: this.props.name,
+          quantity: this.state.quantity
+        })
+        .then(response => {
+          console.log(response)
+        })
     }
 
     subtractQuantity() {
@@ -41,6 +50,7 @@ export default class ProductCardExpanded extends React.Component {
     render() {
         console.log(this.props.nutritionFacts)
         return (
+          <div>
             <div className='product-card-expanded'>
                 <div>
                   <div className='product-card-expanded-name'>{this.props.name}</div>
@@ -86,8 +96,10 @@ export default class ProductCardExpanded extends React.Component {
                     }}/>}
                     <span className='product-card-expanded-ingredients bold'>INGREDIENTS: </span>
                     <span className='product-card-expanded-ingredients'>{this.props.ingredients}</span>
+                    <div className='product-card-expanded-description'>{this.props.description}</div>
                 </div>
             </div>
+          </div>
         )
     }
 }

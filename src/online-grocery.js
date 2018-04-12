@@ -13,11 +13,11 @@ class HomePage extends React.Component{
   render(){
       return(
         <div>
-            <CartDropdownContainer/>
+            <CartDropdownContainer sessionID= {this.props.location.state.sessionID}/>
             <img className='logo-style' src={`${path.join(__dirname, 'images/howesgrocerybanner.png')}`}/>
             <TopNav tabNames={tabNames} handleSetCategory={this.props.handleSetCategory}
                     selected={this.props.selected || 1} />
-            <ProductGrid selected={this.props.selected || 1} />
+            <ProductGrid sessionID= {this.props.location.state.sessionID} selected={this.props.selected || 1} />
         </div>
       )
   }
