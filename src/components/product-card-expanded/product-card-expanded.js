@@ -56,8 +56,8 @@ export default class ProductCardExpanded extends React.Component {
                           <div className='product-card-expanded-quantity-change' onClick={this.addQuantity}>+</div>
                       </div>
                   </div>
-                  <div className='product-card-expanded-description'>{this.props.description}</div>
                   <img className='product-card-expanded-image' src={this.props.imageSrc}/>
+                  <div className='product-card-expanded-description'>{this.props.description}</div>
                 </div>
                 <div className='product-card-expanded-right-section'>
                     <div className="tooltip--triangle" data-tooltip="The Guiding Stars® program evaluates the nutrient content of foods using nutrition data gleaned from the Nutrition Facts table and the ingredient list on product packaging. Click to learn more!">

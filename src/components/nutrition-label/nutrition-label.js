@@ -1,7 +1,16 @@
 import React from 'react'
 import './nutrition-label.scss'
 
+var staticText = {
+    dailyValue: 'The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily ' +
+    'diet. 2,000 calories a day is used for general nutrition advice.'
+}
+
 export default class NutritionLabel extends React.Component{
+
+    formatVitamins(vitmansString) {
+
+    }
 
     makePercentage(value, dailyValue) {
         console.log(Math.round(value/dailyValue * 100).toFixed(2))
@@ -54,6 +63,12 @@ export default class NutritionLabel extends React.Component{
                 </div>
                 <div className='nutrition-facts-line'>
                     <div className='left inline'><span className='bold'>Protein</span><span> {this.props.nutritionFacts.protein}g</span></div><div className='right inline bold'>{this.makePercentage(this.props.nutritionFacts.protein, 50)}%</div>
+                </div>
+                <div className='nutrition-facts-vitamins'>
+                    {this.props.nutritionFacts.vitamins.replace(/% /, '%\t')}
+                </div>
+                <div className='nutrition-facts-daily-value'>
+                    {staticText.dailyValue}
                 </div>
             </div>
         )
