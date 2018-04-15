@@ -7,7 +7,7 @@ export default function userReducer(state = initialUserState, action) {
 
         case(userActionTypes.SET_USER):
             return Object.assign({}, state, {
-                sessionID: action.value
+                sessionID: action.sessionID
             })
 
         default:

@@ -34,7 +34,7 @@ export default class CartDropdown extends React.Component {
         this.props.handleRemoveFromCart(product)
 
         axios.post('/user', {
-          sessionID:this.props.sessionID,
+          sessionID: this.props.sessionID,
           actionType: "delete",
           product: product.name,
           quantity: product.quantity

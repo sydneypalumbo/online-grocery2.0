@@ -18,7 +18,7 @@ export default class OrderSummary extends React.Component{
         })
     }
     clearCart() {
-        this.props.handleClearCart
+        this.props.handleClearCart()
         this.props.cart.items.forEach((item) =>{
           axios.post('/user', {
             sessionID:this.props.sessionID,

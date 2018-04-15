@@ -13,7 +13,6 @@ export default class NutritionLabel extends React.Component{
     }
 
     makePercentage(value, dailyValue) {
-        console.log(Math.round(value/dailyValue * 100).toFixed(2))
         return parseFloat(Math.round(value/dailyValue * 100).toFixed(2))
     }
     render() {

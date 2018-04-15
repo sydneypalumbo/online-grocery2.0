@@ -48,7 +48,14 @@ export default class ProductCardExpanded extends React.Component {
     }
 
     render() {
-        console.log(this.props.nutritionFacts)
+        axios.post('/user', {
+            sessionID:this.props.sessionID,
+            actionType: "view",
+            product: this.props.name,
+        })
+            .then(response => {
+                console.log(response)
+            })
         return (
           <div>
             <div className='product-card-expanded'>
@@ -96,7 +103,6 @@ export default class ProductCardExpanded extends React.Component {
                     }}/>}
                     <span className='product-card-expanded-ingredients bold'>INGREDIENTS: </span>
                     <span className='product-card-expanded-ingredients'>{this.props.ingredients}</span>
-                    <div className='product-card-expanded-description'>{this.props.description}</div>
                 </div>
             </div>
           </div>

@@ -2,13 +2,6 @@ import React from 'react'
 import ProductCardExpanded from './product-card-expanded'
 import { connect } from 'react-redux'
 import { cartActionCreators } from '../../reducers/cart/cart-actions';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
-} from "react-router-dom";
 
 const mapDispatchToProps = function (dispatch) {
     return {
@@ -18,6 +11,11 @@ const mapDispatchToProps = function (dispatch) {
     }
 }
 
+const mapStateToProps = function(state){
+    return {
+        sessionID: state.user.sessionID
+    }
+}
 
 class ProductCardContainer extends React.Component {
     render() {
@@ -27,4 +25,4 @@ class ProductCardContainer extends React.Component {
     }
 }
 
-export default connect(null, mapDispatchToProps)(ProductCardContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ProductCardContainer)

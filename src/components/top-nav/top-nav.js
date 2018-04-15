@@ -1,13 +1,24 @@
 import React from "react";
 import Tab from '../tab/tab.js';
 import './top-nav.scss'
+import axios from 'axios'
 
 export default class TopNav extends React.Component{
 
     render () {
         let tabs = this.props.tabNames.map((name, i)=> {
             return (
-                <Tab onClick={() => this.props.handleSetCategory(i + 1)} tabName={name} index={i + 1} selected={this.props.selected}/>
+                <Tab onClick={() => {
+                    axios.get('/category', {params: {category: i + 1}})
+                    .then(res => {
+                        this.props.handleSetProducts(res.data)
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+                    this.props.handleSetCategory(i + 1)
+                }
+                } tabName={name} index={i + 1} selected={this.props.selected}/>
             );
         });
         return (

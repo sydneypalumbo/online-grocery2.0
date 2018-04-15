@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductGrid from './components/product-grid/product-grid'
+import ProductGridContainer from './components/product-grid/product-grid-container'
 import TopNav from './components/top-nav/top-nav'
 import CartDropdownContainer from './components/cart-dropdown/cart-dropdown-container'
 import './online-grocery.scss'
@@ -13,11 +13,11 @@ class HomePage extends React.Component{
   render(){
       return(
         <div>
-            <CartDropdownContainer sessionID= {this.props.location.state.sessionID}/>
+            <CartDropdownContainer/>
             <img className='logo-style' src={`${path.join(__dirname, 'images/howesgrocerybanner.png')}`}/>
             <TopNav tabNames={tabNames} handleSetCategory={this.props.handleSetCategory}
-                    selected={this.props.selected || 1} />
-            <ProductGrid sessionID= {this.props.location.state.sessionID} selected={this.props.selected || 1} />
+                    handleSetProducts={this.props.handleSetProducts} selected={this.props.selected || 1} />
+            <ProductGridContainer/>
         </div>
       )
   }

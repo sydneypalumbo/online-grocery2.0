@@ -13,6 +13,9 @@ const mapDispatchToProps = function (dispatch) {
     return {
         handleSetCategory: (category) => {
             dispatch(categoryActionCreators.setCategory(category))
+        },
+        handleSetProducts: (products) => {
+            dispatch(categoryActionCreators.setProducts(products))
         }
     }
 }

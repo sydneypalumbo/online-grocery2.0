@@ -6,7 +6,7 @@ import HomePage from './online-grocery-container'
 import ProductViewPage from './product-page'
 import CheckoutPage from './checkout-page'
 import ThankYouPage from './thank-you-page'
-import SessionIDPage from './session-id-page'
+import SessionIDPage from './session-id-container'
 import store from './reducers/createStore'
 import { Provider } from 'react-redux'
 

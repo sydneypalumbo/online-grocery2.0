@@ -5,7 +5,7 @@ export const userActionTypes = {
 function setUser(sessionID) {
     return {
         type: userActionTypes.SET_USER,
-        value: value
+        sessionID: sessionID
     }
 }
 

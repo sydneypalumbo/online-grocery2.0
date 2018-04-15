@@ -11,6 +11,11 @@ const mapDispatchToProps = function (dispatch) {
     }
 }
 
+const mapStateToProps = function(state){
+    return {
+        sessionID: state.user.sessionID
+    }
+}
 
 class ProductCardContainer extends React.Component {
     render() {
@@ -20,4 +25,4 @@ class ProductCardContainer extends React.Component {
     }
 }
 
-export default connect(null, mapDispatchToProps)(ProductCardContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ProductCardContainer)

@@ -1,12 +1,6 @@
 import React from 'react'
 import './online-grocery.scss'
-var path = require('path')
-import axios from 'axios';
 import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
   withRouter
 } from "react-router-dom";
 
@@ -23,9 +17,9 @@ class SessionIDPage extends React.Component{
   }
   handleSubmit(event){
     event.preventDefault()
+    this.props.handleSetUser(this.state.value)
     this.props.history.push({
-      pathname: '/home',
-      state: {sessionID: this.state.value}
+      pathname: '/home'
     })
 
   }

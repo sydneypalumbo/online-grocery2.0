@@ -5,7 +5,8 @@ import { cartActionCreators } from '../../reducers/cart/cart-actions';
 
 const mapStateToProps = function(state){
     return {
-        cart: state.cart
+        cart: state.cart,
+        sessionID: state.user.sessionID
     }
 }
 
@@ -19,7 +20,6 @@ const mapDispatchToProps = function (dispatch) {
 
 class CartDropdownContainer extends React.Component {
     render() {
-        console.log(this.props.sessionID)
         return (
             <CartDropdown {...this.props} />
         )
