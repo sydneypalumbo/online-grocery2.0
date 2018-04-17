@@ -15,7 +15,7 @@ export default class CheckoutPage extends React.Component {
                         history.push('/thank-you')
                     }}
                           className='checkout-sections'>
-                        <OrderSummaryContainer sessionID={this.props.location.state.sessionID}/>
+                        <OrderSummaryContainer/>
                     </form>
                 )}>
                 </Route>

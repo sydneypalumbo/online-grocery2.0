@@ -8,7 +8,7 @@ export default class OrderSummary extends React.Component{
         this.props.handleRemoveFromCart(product)
 
         axios.post('/user', {
-          sessionID:this.props.sessionID,
+          sessionID: this.props.sessionID,
           actionType: "delete",
           product: product.name,
           quantity: product.quantity
@@ -34,6 +34,7 @@ export default class OrderSummary extends React.Component{
     }
     listCartItems() {
         const listedItems = this.props.cart.items.map((item) => {
+            console.log(item)
             return (
                 <div className='order-item'>
                     <img src={item.imageSrc} className='order-item-image'/>
@@ -77,7 +78,7 @@ export default class OrderSummary extends React.Component{
                     Review Order
                 </div>
                 {this.listCartItems()}
-                <button type='submit' onClick={this.clearCart()} className='checkout-button bold'>Complete Order</button>
+                <button type='submit' onClick={() => {this.clearCart()}} className='checkout-button bold'>Complete Order</button>
             </div>
         )
     }
