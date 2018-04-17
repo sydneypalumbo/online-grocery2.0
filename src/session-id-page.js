@@ -17,10 +17,12 @@ class SessionIDPage extends React.Component{
   }
   handleSubmit(event){
     event.preventDefault()
-    this.props.handleSetUser(this.state.value)
-    this.props.history.push({
-      pathname: '/home'
-    })
+    if (this.state.value != '') {
+      this.props.handleSetUser(this.state.value)
+      this.props.history.push({
+        pathname: '/home'
+      })
+    }
 
   }
   render(){
