@@ -5,18 +5,13 @@ import CartDropdownContainer from './components/cart-dropdown/cart-dropdown-cont
 import './online-grocery.scss'
 var path = require('path')
 
-const tabNames = ['Produce', 'Deli & Dairy', 'Bread, Pasta & Rice', 'Packaged & Canned',
-'Condiments, Spreads & Sauces', 'Frozen Foods', 'Beverages'];
-
-
 class HomePage extends React.Component{
   render(){
       return(
         <div>
             <CartDropdownContainer/>
             <img className='logo-style' src={`${path.join(__dirname, 'images/howesgrocerybanner.png')}`}/>
-            <TopNav tabNames={tabNames} handleSetCategory={this.props.handleSetCategory}
-                    handleSetProducts={this.props.handleSetProducts} selected={this.props.selected || 1} />
+            <TopNav {...this.props}/>
             <ProductGridContainer/>
         </div>
       )

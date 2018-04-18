@@ -27,12 +27,11 @@ export default class Tab extends React.Component{
     }
 
     buildSubcategories() {
-        const subcats = ['subcat1', 'subcat2', 'subcat3']
-        return subcats.map((subcat) => {
+        return this.props.subcats.map((subcat) => {
             return(
                 <div className="tab-subcat-bar">
                     <div className="tab-subcat-title">
-                        {subcat}
+                        {subcat.name}
                     </div>
                 </div>
             )

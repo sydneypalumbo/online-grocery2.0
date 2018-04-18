@@ -5,7 +5,9 @@ import { categoryActionCreators } from './reducers/category/category-actions';
 
 const mapStateToProps = function(state){
     return {
-        selected: state.category.selected
+        selected: state.category.selected,
+        categories: state.category.categories,
+        subcategories: state.category.subcategories
     }
 }
 
@@ -16,6 +18,12 @@ const mapDispatchToProps = function (dispatch) {
         },
         handleSetProducts: (products) => {
             dispatch(categoryActionCreators.setProducts(products))
+        },
+        handleSetCategories: (categories) => {
+            dispatch(categoryActionCreators.setCategories(categories))
+        },
+        handleSetSubcategories: (subcategories) => {
+            dispatch(categoryActionCreators.setSubcategories(subcategories))
         }
     }
 }

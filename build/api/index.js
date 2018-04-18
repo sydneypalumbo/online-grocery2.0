@@ -3,9 +3,36 @@ const api = express.Router();
 const db = require('../db');
 const Products = require('../db/models/Products')
 const Users = require('../db/models/Users')
+const Categories = require('../db/models/Categories')
 
+api.get('/categories', (req, res, next)=>{
+  Categories.getCategories(function (err, rows){
+    if(err)
+    {
+      res.json(err);
+    }
+    else
+    {
+      res.json(rows);
+    }
+
+  });
+})
+api.get('/subcategories', (req, res, next)=>{
+  Categories.getSubcategories(function (err, rows){
+    if(err)
+    {
+      res.json(err);
+    }
+    else
+    {
+      res.json(rows);
+    }
+
+  });
+})
 api.get('/category', (req, res, next)=>{
-  Products.getCategory(req.query.category, function (err, rows){
+  Products.getCategoryProducts(req.query.category, function (err, rows){
     if(err)
     {
     res.json(err);

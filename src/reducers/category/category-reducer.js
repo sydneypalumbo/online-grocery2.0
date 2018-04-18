@@ -1,16 +1,6 @@
 import { categoryActionTypes } from './category-actions'
-import axios from 'axios'
 
-var products = []
-axios.get('/category', {params: {category: 1}})
-    .then(res => {
-        products = res.data
-    })
-    .catch(err => {
-        console.log(err)
-    })
-
-const initialCategoryState = { category: 1, products: products}
+const initialCategoryState = { selected: 1, products: [], categories: [], subcategories: []}
 
 export default function categoryReducer(state = initialCategoryState, action) {
     switch (action.type) {
@@ -24,6 +14,17 @@ export default function categoryReducer(state = initialCategoryState, action) {
             return Object.assign({}, state, {
                 products: action.products
             })
+
+        case(categoryActionTypes.SET_CATEGORIES):
+            return Object.assign({}, state, {
+                categories: action.categories
+            })
+
+        case(categoryActionTypes.SET_SUBCATEGORIES):
+            return Object.assign({}, state, {
+                subcategories: action.subcategories
+            })
+
 
         default:
             return state
