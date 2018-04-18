@@ -26,10 +26,11 @@ class SessionIDPage extends React.Component{
 
   }
   render(){
-      return(
+    const staticText = "Please enter your session ID given to you by Qualtrics:"
+    return(
             <div className= "form-container">
             <form className="form-style" onSubmit= {this.handleSubmit}>
-              <div className="form-prompt"> Please enter your session ID given to you by Qualtrics:</div>
+              <div className="form-prompt">{staticText}</div>
               <input className="form-input" type='text' value={this.state.value} onChange={this.handleChange} />
               <input type="submit" value="Submit" />
             </form>

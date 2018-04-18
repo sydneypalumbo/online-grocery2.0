@@ -6,7 +6,9 @@ var path = require('path')
 
 const staticText = {
     header: "Thank You For Your Order!",
-    subheader: "We appreciate all of your feedback on your shopping experience today!"
+    subheader: "We appreciate all of your feedback on your shopping experience today! The following is the code to" +
+    " continue your Qualtrics survey:",
+    code: "HHLMMSP"
 }
 
 export default class ThankYouPage extends React.Component {
@@ -17,6 +19,7 @@ export default class ThankYouPage extends React.Component {
                 <img className='logo-style' src={`${path.join(__dirname, 'images/howesgrocerybanner.png')}`}/>
                 <div className='thank-you-header'>{staticText.header}</div>
                 <div className='thank-you-subheader'>{staticText.subheader}</div>
+                <div className='thank-you-subheader bold'>{staticText.code}</div>
                 <Link to='/' className='no-underline'>
                     <button className='back-to-shopping-button bold'>Back to Shopping</button>
                 </Link>

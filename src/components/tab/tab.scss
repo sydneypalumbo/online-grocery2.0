@@ -1,3 +1,5 @@
+@import "../../base/base";
+
 .tab-container {
   width: 14.285%;
   height: 40px;
@@ -10,9 +12,9 @@
   text-align: center;
   position: relative;
   font-size: 10px;
+  z-index: 1;
 
   &:hover {
-    background-color: #999999;
     cursor: pointer;
   }
   .tab {
@@ -24,6 +26,38 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .tab-dropdown {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    padding-top: 2px;
+    width: 100%;
+    background-color: white;
+    display: inline-block;
+
+    .tab-subcat-bar {
+      height: 30px;
+      width: 100%;
+      background-color: #666666;
+      position: relative;
+      display: inline-block;
+
+      .tab-subcat-title {
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:hover {
+        background-color: #999999;
+      }
+    }
+  }
 
 }
 .selected {
@@ -31,7 +65,7 @@
   height: 40px;
   margin: 0;
   padding: 0;
-  background-color: green;
+  background-color: $price-green;
   color: #ffffff;
   display: inline-block;
   outline: 1px solid #ffffff;
@@ -40,7 +74,7 @@
   font-size: 10px;
 
   &:hover {
-    background-color: green;
+    background-color: $price-green;
   }
   .tab {
     padding: 0;
@@ -51,6 +85,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .tab-dropdown {
+    .tab-subcat-bar {
+      background-color: #2ba12d;
+
+      &:hover {
+        background-color: #4acf4c;
+      }
+    }
+  }
+
 
 
 }
