@@ -47,6 +47,21 @@ export default class ProductCardExpanded extends React.Component {
         })
     }
 
+    convertToStars(starpoints) {
+        if (starpoints < 0) {
+            return 0
+        }
+        if (starpoints == 1 || starpoints == 2) {
+            return 1
+        }
+        if (starpoints == 3 || starpoints == 4) {
+            return 2
+        }
+        else {
+            return 3
+        }
+    }
+
     render() {
         axios.post('/user', {
             sessionID:this.props.sessionID,
@@ -80,7 +95,7 @@ export default class ProductCardExpanded extends React.Component {
                     <div className="tooltip--triangle" data-tooltip="The Guiding Stars® program evaluates the nutrient content of foods using nutrition data gleaned from the Nutrition Facts table and the ingredient list on product packaging. Click to learn more!">
                         <a href="https://guidingstars.com/what-is-guiding-stars/">
                             <img className='product-card-guiding-stars'
-                                 src={`${path.join(__dirname, 'images/' + this.props.stars + 'howestars.png')}`}/>
+                                 src={`${path.join(__dirname, 'images/' + this.convertToStars(this.props.starpoints) + 'howestars.png')}`}/>
                         </a>
                     </div>
                     {this.props.servingSize && <NutritionLabel nutritionFacts={{

@@ -6,10 +6,11 @@ export const categoryActionTypes = {
 
 }
 
-function setCategory(category) {
+function setCategory(category, subcategory) {
     return {
         type: categoryActionTypes.SET_CATEGORY,
-        category: category
+        category: category,
+        subcategory: subcategory
     }
 }
 

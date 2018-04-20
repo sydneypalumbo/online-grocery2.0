@@ -6,7 +6,7 @@ import axios from 'axios'
 export default class TopNav extends React.Component{
 
     getInitialData() {
-        axios.get('/category', {params: {category: 1}})
+        axios.get('/category', {params: {category: 1, subcategory: 1}})
             .then(res => {
                 this.props.handleSetProducts(res.data)
             })
@@ -42,20 +42,12 @@ export default class TopNav extends React.Component{
             let tabSubcats = []
             while (subcats.length > 0 && subcats[0].id == tab.id) {
                 tabSubcats.push(subcats.shift())
-                console.log(this.props.subcategories)
             }
             return (
-                <Tab onClick={() => {
-                    axios.get('/category', {params: {category: tab.id}})
-                    .then(res => {
-                        this.props.handleSetProducts(res.data)
-                    })
-                    .catch(err => {
-                        console.log(err)
-                    })
-                    this.props.handleSetCategory(tab.id)
-                }
-                } tabName={tab.name} index={tab.id} subcats={tabSubcats} selected={this.props.selected}/>
+                <Tab tabName={tab.name} index={tab.id} subcats={tabSubcats}
+                     subcategory={this.props.subcategory} category={this.props.category}
+                     handleSetCategory={this.props.handleSetCategory}
+                     handleSetProducts={this.props.handleSetProducts}/>
             );
         });
         return (
@@ -63,8 +55,8 @@ export default class TopNav extends React.Component{
             <div className="top-nav">
                 {tabs}
             </div>
-              {this.props.categories[this.props.selected - 1] &&
-                  <div className= "title"> {this.props.categories[this.props.selected - 1].name} </div>}
+              {this.props.categories[this.props.category - 1] &&
+                  <div className= "title"> {this.props.categories[this.props.category - 1].name} </div>}
           </div>
         );
     }

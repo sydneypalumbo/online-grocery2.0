@@ -32,7 +32,7 @@ api.get('/subcategories', (req, res, next)=>{
   });
 })
 api.get('/category', (req, res, next)=>{
-  Products.getCategoryProducts(req.query.category, function (err, rows){
+  Products.getCategoryProducts(req.query.category, req.query.subcategory, function (err, rows){
     if(err)
     {
     res.json(err);

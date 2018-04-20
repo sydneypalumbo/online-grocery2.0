@@ -1,5 +1,6 @@
 import React from "react";
 import './tab.scss';
+import axios from 'axios'
 
 export default class Tab extends React.Component{
 
@@ -29,7 +30,17 @@ export default class Tab extends React.Component{
     buildSubcategories() {
         return this.props.subcats.map((subcat) => {
             return(
-                <div className="tab-subcat-bar">
+                <div className="tab-subcat-bar" onClick={() => {
+                    axios.get('/category', {params: {category: this.props.index, subcategory: subcat.subid}})
+                        .then(res => {
+                            console.log(res.data)
+                            this.props.handleSetProducts(res.data)
+                        })
+                        .catch(err => {
+                            console.log(err)
+                        })
+                    this.props.handleSetCategory(this.props.index, subcat.subid)
+                }}>
                     <div className="tab-subcat-title">
                         {subcat.name}
                     </div>
@@ -40,8 +51,8 @@ export default class Tab extends React.Component{
 
     render () {
         return(
-           <div className={this.props.index == this.props.selected ? "tab-container selected" : "tab-container"}
-           onClick={this.props.onClick} onMouseEnter={() => {this.openDropdown()}} onMouseLeave={() => {this.closeDropdown()}}>
+           <div className={this.props.index == this.props.category ? "tab-container selected" : "tab-container"}
+                onMouseEnter={() => {this.openDropdown()}} onMouseLeave={() => {this.closeDropdown()}}>
                <div className="tab">
                    {this.props.tabName}
                </div>
