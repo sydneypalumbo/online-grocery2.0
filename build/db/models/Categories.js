@@ -1,4 +1,4 @@
-var db = require ('../../db')
+var db = require ('../index')
 
 var Categories = {
     getCategories: function(callback){

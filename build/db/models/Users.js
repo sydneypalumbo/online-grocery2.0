@@ -1,4 +1,4 @@
-var db = require ('../../db')
+var db = require ('../index')
 
 var Users = {
   getAllUsers: function(callback){

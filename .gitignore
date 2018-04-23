@@ -4,3 +4,7 @@ node_modules
 #awsmobilejs
 awsmobilejs/.awsmobile/backend-build
 awsmobilejs/\#current-backend-info
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
