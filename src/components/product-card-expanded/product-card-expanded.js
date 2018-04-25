@@ -92,12 +92,12 @@ export default class ProductCardExpanded extends React.Component {
                   <div className='product-card-expanded-description'>{this.props.description}</div>
                 </div>
                 <div className='product-card-expanded-right-section'>
-                    <div className="tooltip--triangle" data-tooltip="The Guiding Stars® program evaluates the nutrient content of foods using nutrition data gleaned from the Nutrition Facts table and the ingredient list on product packaging. Click to learn more!">
-                        <a href="https://guidingstars.com/what-is-guiding-stars/">
-                            <img className='product-card-guiding-stars'
-                                 src={`${path.join(__dirname, 'images/' + this.convertToStars(this.props.starpoints) + 'howestars.png')}`}/>
-                        </a>
-                    </div>
+                    {/* NO STARS<div className="tooltip--triangle" data-tooltip="The Guiding Stars® program evaluates the nutrient content of foods using nutrition data gleaned from the Nutrition Facts table and the ingredient list on product packaging. Click to learn more!">*/}
+                        {/*<a href="https://guidingstars.com/what-is-guiding-stars/">*/}
+                            {/*<img className='product-card-guiding-stars'*/}
+                                 {/*src={`${path.join(__dirname, 'images/' + this.convertToStars(this.props.starpoints) + 'howestars.png')}`}/>*/}
+                        {/*</a>*/}
+                    {/*</div>*/}
                     {this.props.servingSize && <NutritionLabel nutritionFacts={{
                         servingSize: this.props.servingSize,
                         servings: this.props.servings,
@@ -116,7 +116,7 @@ export default class ProductCardExpanded extends React.Component {
                         protein: this.props.protein,
                         vitamins: this.props.vitamins,
                     }}/>}
-                    <span className='product-card-expanded-ingredients bold'>INGREDIENTS: </span>
+                    {this.props.ingredients && this.props.ingredients.length > 0 && <span className='product-card-expanded-ingredients bold'>INGREDIENTS: </span>}
                     <span className='product-card-expanded-ingredients'>{this.props.ingredients}</span>
                 </div>
             </div>
