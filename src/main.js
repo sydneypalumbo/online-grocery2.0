@@ -9,6 +9,7 @@ import ThankYouPage from './thank-you-page'
 import SessionIDPage from './session-id-container'
 import store from './reducers/createStore'
 import { Provider } from 'react-redux'
+import SearchPageContainer from './search-page-container'
 
 render(
 	<Provider store={store}>
@@ -17,6 +18,7 @@ render(
 				<Route exact path="/" component={SessionIDPage}/>
 					<Route path= "/home"component={HomePage} />
 				  <Route path="/product" component={ProductViewPage}/>
+					<Route path="/search" component={SearchPageContainer}/>
 					<Route path="/checkout" component={CheckoutPage}/>
 					<Route path="/thank-you" component={ThankYouPage}/>
 			</Switch>
