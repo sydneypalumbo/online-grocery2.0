@@ -1,13 +1,17 @@
 @import "../../base/base";
 .search-container {
-  display: inline-block;
-  align-items: right;
+  display: flow-root;
+  flex-direction: row;
+  align-content:flex-end;
+
 }
+
 input[type=text] {
   padding: 6px;
   margin-top: 8px;
   font-size: 17px;
   border: none;
+  float:right;
 }
 
 .search-container button {

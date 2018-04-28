@@ -38,8 +38,8 @@ class Search extends React.Component{
         return (
           <div className="search-container">
             <form onSubmit= {this.handleSubmit}>
-              <input className="form-input" type='text' placeholder= "Search.." value={this.state.value} onChange={this.handleChange} />
               <button type="submit"><i className="fa fa-search"></i></button>
+              <input className="form-input" type='text' placeholder= "Search.." value={this.state.value} onChange={this.handleChange} />
             </form>
           </div>
         );
