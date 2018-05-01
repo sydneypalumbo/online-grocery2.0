@@ -7,7 +7,7 @@ import Search from '../search/search'
 export default class TopNav extends React.Component{
 
     getInitialData() {
-        axios.get('/category', {params: {category: 1, subcategory: 1}})
+        axios.get('/category', {params: {category: 1, subcategory: 1, offset:0}})
             .then(res => {
                 this.props.handleSetProducts(res.data)
             })
