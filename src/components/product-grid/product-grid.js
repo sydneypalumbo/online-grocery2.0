@@ -1,6 +1,7 @@
 import React from 'react'
 import './product-grid.scss'
 import ProductCardContainer from '../product-card/product-card-container'
+import PaginationContainer from '../pagination/pagination-container'
 
 export default class ProductGrid extends React.Component {
 
@@ -13,7 +14,10 @@ export default class ProductGrid extends React.Component {
             )
         })
         return (
+            <div>
             <div>{productCards}</div>
+            <PaginationContainer {...this.props}/>
+            </div>
         )
     }
 

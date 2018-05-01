@@ -2,6 +2,7 @@ import React from 'react'
 import OnlineGrocery from './online-grocery'
 import { connect } from 'react-redux'
 import { categoryActionCreators } from './reducers/category/category-actions';
+import { paginationActionCreators } from './reducers/pagination/pagination-actions';
 
 const mapStateToProps = function(state){
     return {
@@ -24,6 +25,9 @@ const mapDispatchToProps = function (dispatch) {
         },
         handleSetSubcategories: (subcategories) => {
             dispatch(categoryActionCreators.setSubcategories(subcategories))
+        },
+        handleClearPage: () => {
+          dispatch(paginationActionCreators.clearPage())
         }
     }
 }
@@ -37,4 +41,3 @@ class OnlineGroceryContainer extends React.Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(OnlineGroceryContainer)
-

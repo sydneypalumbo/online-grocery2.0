@@ -48,7 +48,8 @@ export default class TopNav extends React.Component{
                 <Tab tabName={tab.name} key={key} index={tab.id} subcats={tabSubcats}
                      subcategory={this.props.subcategory} category={this.props.category}
                      handleSetCategory={this.props.handleSetCategory}
-                     handleSetProducts={this.props.handleSetProducts}/>
+                     handleSetProducts={this.props.handleSetProducts}
+                     handleClearPage={this.props.handleClearPage}/>
             );
         });
         return (

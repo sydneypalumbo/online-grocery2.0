@@ -13,7 +13,7 @@ class HomePage extends React.Component{
             <CartDropdownContainer/>
             <img className='logo-style' src={`${path.join(__dirname, 'images/howesgrocerybanner.png')}`}/>
             <TopNav {...this.props}/>
-            <ProductGridContainer/>
+            <ProductGridContainer />
         </div>
       )
   }

@@ -39,6 +39,7 @@ export default class Tab extends React.Component{
                         .catch(err => {
                             console.log(err)
                         })
+                    this.props.handleClearPage()
                     this.props.handleSetCategory(this.props.index, subcat.subid)
                 }}>
                     <div className="tab-subcat-title" key={key}>
