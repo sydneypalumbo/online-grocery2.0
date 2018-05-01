@@ -1,6 +1,6 @@
 import { categoryActionTypes } from './category-actions'
 
-const initialCategoryState = { category: 1, subcategory: 1, products: [], categories: [], subcategories: []}
+const initialCategoryState = { category: 1, subcategory: 1, subcategoryName: 'Fruits', products: [], categories: [], subcategories: []}
 
 export default function categoryReducer(state = initialCategoryState, action) {
     switch (action.type) {
@@ -8,7 +8,8 @@ export default function categoryReducer(state = initialCategoryState, action) {
         case(categoryActionTypes.SET_CATEGORY):
             return Object.assign({}, state, {
                 category: action.category,
-                subcategory: action.subcategory
+                subcategory: action.subcategory,
+                subcategoryName: action.subcategoryName
             })
 
         case(categoryActionTypes.SET_PRODUCTS):

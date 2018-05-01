@@ -29,18 +29,26 @@ export default class Tab extends React.Component{
 
     buildSubcategories() {
         return this.props.subcats.map((subcat, key) => {
+            if (subcat.subid == this.props.subcategory && this.props.index == this.props.category) {
+                return (
+                    <div className="tab-subcat-bar selected-subcat" key={key}>
+                        <div className="tab-subcat-title" key={key}>
+                            {subcat.name}
+                        </div>
+                    </div>
+                )
+            }
             return(
                 <div className="tab-subcat-bar" key={key} onClick={() => {
                     axios.get('/category', {params: {category: this.props.index, subcategory: subcat.subid, offset:0}})
                         .then(res => {
-                            console.log(res.data)
                             this.props.handleSetProducts(res.data)
                         })
                         .catch(err => {
                             console.log(err)
                         })
                     this.props.handleClearPage()
-                    this.props.handleSetCategory(this.props.index, subcat.subid)
+                    this.props.handleSetCategory(this.props.index, subcat.subid, subcat.name)
                 }}>
                     <div className="tab-subcat-title" key={key}>
                         {subcat.name}

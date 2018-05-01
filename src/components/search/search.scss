@@ -1,17 +1,16 @@
 @import "../../base/base";
 .search-container {
-  display: flow-root;
+  display: inline-block;
   flex-direction: row;
   align-content:flex-end;
-  height: 40px;
-
+  float: right;
 }
 
 input[type=text] {
   padding: 6px;
+  border: 1px solid $light-shadow;
   margin-top: 8px;
   font-size: 17px;
-  border: none;
   float:right;
 }
 
@@ -19,13 +18,14 @@ input[type=text] {
   float: right;
   padding: 6px 10px;
   margin-top: 8px;
-  margin-right: 16px;
+  margin-right: 1px;
+  border: 1px solid #ddd;
   background: #ddd;
   font-size: 17px;
-  border: none;
   cursor: pointer;
 }
 
 .search-container button:hover {
   background: #ccc;
+  border: 1px solid #ccc;
 }

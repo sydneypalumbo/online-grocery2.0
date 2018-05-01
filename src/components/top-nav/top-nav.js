@@ -7,7 +7,7 @@ import Search from '../search/search'
 export default class TopNav extends React.Component{
 
     getInitialData() {
-        axios.get('/category', {params: {category: 1, subcategory: 1, offset:0}})
+        axios.get('/category', {params: {category: this.props.category, subcategory: this.props.subcategory, offset:0}})
             .then(res => {
                 this.props.handleSetProducts(res.data)
             })
@@ -53,14 +53,16 @@ export default class TopNav extends React.Component{
             );
         });
         return (
-          <div>
-            <div className="top-nav">
-                {tabs}
+            <div>
+                <div className="top-nav">
+                    {tabs}
+                </div>
+                {this.props.categories[this.props.category - 1] &&
+                    <div className= "title"> {this.props.categories[this.props.category - 1].name} </div>
+                }
+                <div className= "subtitle"> {this.props.subcategoryName} </div>
+                <Search handleSetProducts={this.props.handleSetProducts} />
             </div>
-            <Search handleSetProducts={this.props.handleSetProducts} />
-              {this.props.categories[this.props.category - 1] &&
-            <div className= "title"> {this.props.categories[this.props.category - 1].name} </div>}
-          </div>
         );
     }
 };

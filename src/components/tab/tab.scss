@@ -41,6 +41,7 @@
 
       &:hover {
         cursor: pointer;
+        background-color: #999999;
       }
 
       .tab-subcat-title {
@@ -52,10 +53,6 @@
         left: 50%;
         width: 100%;
         transform: translate(-50%, -50%);
-      }
-
-      &:hover {
-        background-color: #999999;
       }
     }
   }
@@ -93,6 +90,11 @@
 
       &:hover {
         background-color: #4acf4c;
+      }
+
+      &.selected-subcat {
+        background-color: #4acf4c;
+        cursor: default;
       }
     }
   }
