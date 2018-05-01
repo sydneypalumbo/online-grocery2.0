@@ -43,6 +43,19 @@ api.get('/category', (req, res, next)=>{
 
   });
 })
+api.get('/search', (req, res, next)=>{
+  Products.searchProducts(req.query.search, function (err, rows){
+    if(err)
+    {
+    res.json(err);
+    }
+    else
+    {
+    res.json(rows);
+    }
+
+  });
+})
 api.get('/users', (req, res, next)=>{
   Users.getAllUsers(function (err, rows){
     if(err)

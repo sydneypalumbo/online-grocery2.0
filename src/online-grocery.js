@@ -3,6 +3,7 @@ import ProductGridContainer from './components/product-grid/product-grid-contain
 import TopNav from './components/top-nav/top-nav'
 import CartDropdownContainer from './components/cart-dropdown/cart-dropdown-container'
 import './online-grocery.scss'
+
 var path = require('path')
 
 class HomePage extends React.Component{

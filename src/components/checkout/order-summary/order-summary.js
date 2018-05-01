@@ -19,17 +19,23 @@ export default class OrderSummary extends React.Component{
     }
     clearCart() {
         this.props.handleClearCart()
-        this.props.cart.items.forEach((item) =>{
-          axios.post('/user', {
-            sessionID:this.props.sessionID,
-            actionType: "checkout",
-            product: item.name,
-            quantity: item.quantity
-          })
-          .then(response => {
+        this.props.cart.items.forEach((item) => {
+            axios.post('/user', {
+                sessionID: this.props.sessionID,
+                actionType: "checkout",
+                product: item.name,
+                quantity: item.quantity
+            })
+                .then(response => {
+                    console.log(response)
+                })
+        })
+        axios.post('/user', {
+            sessionID: this.props.sessionID,
+            actionType: "cartsummary"
+        })
+        .then(response => {
             console.log(response)
-          })
-
         })
     }
     listCartItems() {

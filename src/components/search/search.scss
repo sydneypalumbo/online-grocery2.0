@@ -1,0 +1,31 @@
+@import "../../base/base";
+.search-container {
+  display: inline-block;
+  flex-direction: row;
+  align-content:flex-end;
+  float: right;
+}
+
+input[type=text] {
+  padding: 6px;
+  border: 1px solid $light-shadow;
+  margin-top: 8px;
+  font-size: 17px;
+  float:right;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 1px;
+  border: 1px solid #ddd;
+  background: #ddd;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+  border: 1px solid #ccc;
+}
