@@ -10,14 +10,16 @@ const mapStateToProps = function(state){
         subcategory: state.category.subcategory,
         subcategoryName: state.category.subcategoryName,
         categories: state.category.categories,
-        subcategories: state.category.subcategories
+        subcategories: state.category.subcategories,
+        count: state.category.count,
+        page: state.page.page
     }
 }
 
 const mapDispatchToProps = function (dispatch) {
     return {
-        handleSetCategory: (category, subcategory, subcategoryName) => {
-            dispatch(categoryActionCreators.setCategory(category, subcategory, subcategoryName))
+        handleSetCategory: (category, subcategory, subcategoryName, count) => {
+            dispatch(categoryActionCreators.setCategory(category, subcategory, subcategoryName, count))
         },
         handleSetProducts: (products) => {
             dispatch(categoryActionCreators.setProducts(products))

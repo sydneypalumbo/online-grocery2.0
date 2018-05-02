@@ -1,0 +1,41 @@
+@import "./base/base";
+
+.form-container {
+
+  .form-style {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 80vh;
+
+    .form-header {
+      color: $price-green;
+      font-size: 30px;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .form-input {
+      margin-top: 10px;
+    }
+
+    .form-button {
+      text-align: center;
+      width: 300px;
+      background-color: $cart-color;
+      color: white;
+      border: none;
+      padding: 10px;
+      margin: 10px 10px 10px 10px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px $dark-shadow;
+      cursor: pointer;
+      &:hover {
+        background-color: #eb1bfe;
+      }
+    }
+  }
+}

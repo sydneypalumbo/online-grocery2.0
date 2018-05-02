@@ -6,6 +6,7 @@ import PaginationContainer from '../pagination/pagination-container'
 export default class ProductGrid extends React.Component {
 
     render() {
+        const pageType = this.props.pageType || 'browse-page'
         let productCards = this.props.products.map((product,i) => {
             return (
                 <div key={i} className='product-grid-item'>
@@ -14,9 +15,11 @@ export default class ProductGrid extends React.Component {
             )
         })
         return (
-            <div>
-            <div>{productCards}</div>
-            <PaginationContainer {...this.props}/>
+            <div className='product-grid'>
+                <div>{productCards}</div>
+                {pageType != 'search-page' &&
+                    <PaginationContainer {...this.props}/>
+                }
             </div>
         )
     }

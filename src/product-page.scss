@@ -1,0 +1,11 @@
+@import "./base/base";
+
+.back-to-browse-from-product {
+  font-size:16px;
+  color: $price-green;
+  display: inline-block;
+  padding-top: 5px;
+  &:hover {
+    text-decoration: underline;
+  }
+}

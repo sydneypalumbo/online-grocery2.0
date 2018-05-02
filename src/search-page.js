@@ -37,7 +37,7 @@ class SearchPage extends React.Component{
         {this.props.products && this.props.products.length == 0 &&
             <div className='search-prompt'>{staticText.enterSearch}</div>
         }
-        <ProductGridContainer />
+        <ProductGridContainer pageType='search-page'/>
     </div>
     )
     }

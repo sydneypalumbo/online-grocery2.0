@@ -116,8 +116,8 @@ export default class ProductCardExpanded extends React.Component {
                         protein: this.props.protein,
                         vitamins: this.props.vitamins,
                     }}/>}
-                    {this.props.ingredients && this.props.ingredients.length > 0 && <span className='product-card-expanded-ingredients bold'>INGREDIENTS: </span>}
-                    <span className='product-card-expanded-ingredients'>{this.props.ingredients}</span>
+                    {this.props.ingredients && this.props.ingredients.length > 0 && <div className='product-card-expanded-ingredients bold'>INGREDIENTS: </div>}
+                    <div className='product-card-expanded-ingredients'>{this.props.ingredients}</div>
                 </div>
             </div>
           </div>

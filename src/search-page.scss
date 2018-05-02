@@ -1,17 +1,20 @@
 @import './base/base';
 
-.title{
+.title {
   font-size:30px;
   color: $price-green;
   padding-bottom: 20px;
 }
 
-.subtitle{
+.back-to-browse {
   font-size:16px;
-  color: green;
+  color: $price-green;
   display: inline-block;
   padding-bottom: 20px;
   padding-left: 10px;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .search-prompt {

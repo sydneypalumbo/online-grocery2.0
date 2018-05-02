@@ -6,9 +6,10 @@ import { categoryActionCreators } from '../../reducers/category/category-actions
 
 const mapStateToProps = function(state){
     return {
-        page: state.page,
-        category: state.category,
-        subcategory: state.subcategory
+        page: state.page.page,
+        category: state.category.category,
+        subcategory: state.category.subcategory,
+        count: state.category.count
     }
 }
 const mapDispatchToProps = function (dispatch) {

@@ -1,6 +1,6 @@
 import { paginationActionTypes } from './pagination-actions'
 
-const initialPaginationState = { page:1}
+const initialPaginationState = {page:1}
 
 export default function paginationReducer(state = initialPaginationState, action) {
     switch (action.type) {

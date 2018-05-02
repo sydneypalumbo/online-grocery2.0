@@ -40,15 +40,21 @@ export default class Tab extends React.Component{
             }
             return(
                 <div className="tab-subcat-bar" key={key} onClick={() => {
-                    axios.get('/category', {params: {category: this.props.index, subcategory: subcat.subid, offset:0}})
+                    axios.get('/category', {params: {category: this.props.index, subcategory: subcat.subid, offset: 0}})
                         .then(res => {
                             this.props.handleSetProducts(res.data)
                         })
                         .catch(err => {
                             console.log(err)
                         })
+                    axios.get('/count', {params: {category: this.props.index, subcategory: subcat.subid}})
+                        .then(res => {
+                            this.props.handleSetCategory(this.props.index, subcat.subid, subcat.name, Object.values(res.data[0])[0])
+                        })
+                        .catch(err => {
+                            console.log(err)
+                        })
                     this.props.handleClearPage()
-                    this.props.handleSetCategory(this.props.index, subcat.subid, subcat.name)
                 }}>
                     <div className="tab-subcat-title" key={key}>
                         {subcat.name}

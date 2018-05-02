@@ -1,8 +1,14 @@
 import React from 'react'
-import './online-grocery.scss'
+import './session-id-page.scss'
 import {
   withRouter
 } from "react-router-dom";
+
+const staticText = {
+  welcome: `Welcome to Howe's Grocery`,
+  submit: 'Start Shopping!',
+  prompt: 'Please enter your session ID given to you by Qualtrics:'
+}
 
 class SessionIDPage extends React.Component{
   constructor(props) {
@@ -26,14 +32,14 @@ class SessionIDPage extends React.Component{
 
   }
   render(){
-    const staticText = "Please enter your session ID given to you by Qualtrics:"
     return(
             <div className= "form-container">
-            <form className="form-style" onSubmit= {this.handleSubmit}>
-              <div className="form-prompt">{staticText}</div>
-              <input className="form-input" type='text' value={this.state.value} onChange={this.handleChange} />
-              <input type="submit" value="Submit" />
-            </form>
+              <form className="form-style" onSubmit= {this.handleSubmit}>
+                <div className="form-header">{staticText.welcome}</div>
+                <div className="form-prompt">{staticText.prompt}</div>
+                <input className="form-input" type='text' value={this.state.value} onChange={this.handleChange} />
+                <button className='form-button bold' type="submit">{staticText.submit}</button>
+              </form>
             </div>
       )
   }
