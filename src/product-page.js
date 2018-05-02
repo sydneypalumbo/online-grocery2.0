@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductCardExpandedContainer from "./components/product-card-expanded/product-card-expanded-container";
-import './online-grocery.scss';
+import './product-page.scss';
 import CartDropdownContainer from './components/cart-dropdown/cart-dropdown-container'
 import { Link } from 'react-router-dom'
 
