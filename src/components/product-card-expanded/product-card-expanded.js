@@ -21,10 +21,34 @@ export default class ProductCardExpanded extends React.Component {
     handleAddToCart() {
         this.props.handleAddToCart(this.props, this.state.quantity)
         axios.post('/user', {
-          sessionID:this.props.sessionID,
-          actionType: "add",
-          product: this.props.name,
-          quantity: this.state.quantity
+            sessionID: this.props.sessionID,
+            actionType: "add",
+            quantity: this.state.quantity,
+            name: product.name,
+            size: product.size,
+            servingSize: product.servingSize,
+            servings: product.servings,
+            caloriesFromFat: product.caloriesFromFat,
+            calories: product.calories,
+            totalFat: product.total,
+            saturatedFat: product.saturatedFat,
+            transFat: product.transFat,
+            polyFat: product.polyFat,
+            monoFat: product.monoFat,
+            cholesterol: product.cholesterol,
+            sodium: product.sodium,
+            potassium: product.potassium,
+            carbs: product.carbs,
+            fiber: product.fiber,
+            sugar: product.sugar,
+            protein: product.protein,
+            vitamins: product.vitamins,
+            ingredients: product.ingredients,
+            allergens: product.allergens,
+            price: product.price,
+            category: product.category,
+            subcategory: product.subcategory,
+            starpoints: product.starpoints
         })
         .then(response => {
           console.log(response)
@@ -64,9 +88,33 @@ export default class ProductCardExpanded extends React.Component {
 
     render() {
         axios.post('/user', {
-            sessionID:this.props.sessionID,
+            sessionID: this.props.sessionID,
             actionType: "view",
-            product: this.props.name,
+            name: this.props.name,
+            size: this.props.size,
+            servingSize: this.props.servingSize,
+            servings: this.props.servings,
+            caloriesFromFat: this.props.caloriesFromFat,
+            calories: this.props.calories,
+            totalFat: this.props.total,
+            saturatedFat: this.props.saturatedFat,
+            transFat: this.props.transFat,
+            polyFat: this.props.polyFat,
+            monoFat: this.props.monoFat,
+            cholesterol: this.props.cholesterol,
+            sodium: this.props.sodium,
+            potassium: this.props.potassium,
+            carbs: this.props.carbs,
+            fiber: this.props.fiber,
+            sugar: this.props.sugar,
+            protein: this.props.protein,
+            vitamins: this.props.vitamins,
+            ingredients: this.props.ingredients,
+            allergens: this.props.allergens,
+            price: this.props.price,
+            category: this.props.category,
+            subcategory: this.props.subcategory,
+            starpoints: this.props.starpoints
         })
             .then(response => {
                 console.log(response)

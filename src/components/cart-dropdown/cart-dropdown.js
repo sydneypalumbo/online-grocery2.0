@@ -34,10 +34,34 @@ export default class CartDropdown extends React.Component {
         this.props.handleRemoveFromCart(product)
 
         axios.post('/user', {
-          sessionID: this.props.sessionID,
-          actionType: "delete",
-          product: product.name,
-          quantity: product.quantity
+            sessionID: this.props.sessionID,
+            actionType: "delete",
+            quantity: product.quantity,
+            name: product.name,
+            size: product.size,
+            servingSize: product.servingSize,
+            servings: product.servings,
+            caloriesFromFat: product.caloriesFromFat,
+            calories: product.calories,
+            totalFat: product.total,
+            saturatedFat: product.saturatedFat,
+            transFat: product.transFat,
+            polyFat: product.polyFat,
+            monoFat: product.monoFat,
+            cholesterol: product.cholesterol,
+            sodium: product.sodium,
+            potassium: product.potassium,
+            carbs: product.carbs,
+            fiber: product.fiber,
+            sugar: product.sugar,
+            protein: product.protein,
+            vitamins: product.vitamins,
+            ingredients: product.ingredients,
+            allergens: product.allergens,
+            price: product.price,
+            category: product.category,
+            subcategory: product.subcategory,
+            starpoints: product.starpoints
         })
         .then(response => {
           console.log(response)

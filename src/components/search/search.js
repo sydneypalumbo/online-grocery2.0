@@ -34,7 +34,7 @@ class Search extends React.Component{
         axios.post('/user', {
             sessionID: this.props.sessionID,
             actionType: "search",
-            product: this.state.value
+            search: this.state.value
         })
         .then(response => {
             console.log(response)

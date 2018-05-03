@@ -19,12 +19,37 @@ export default class ProductCard extends React.Component {
     }
 
     handleAddToCart() {
+        const product = this.props.product
         this.props.handleAddToCart(this.props.product, this.state.quantity)
         axios.post('/user', {
-          sessionID: this.props.sessionID,
-          actionType: "add",
-          product: this.props.product.name,
-          quantity: this.state.quantity
+            sessionID: this.props.sessionID,
+            actionType: "add",
+            quantity: this.state.quantity,
+            name: product.name,
+            size: product.size,
+            servingSize: product.servingSize,
+            servings: product.servings,
+            caloriesFromFat: product.caloriesFromFat,
+            calories: product.calories,
+            totalFat: product.total,
+            saturatedFat: product.saturatedFat,
+            transFat: product.transFat,
+            polyFat: product.polyFat,
+            monoFat: product.monoFat,
+            cholesterol: product.cholesterol,
+            sodium: product.sodium,
+            potassium: product.potassium,
+            carbs: product.carbs,
+            fiber: product.fiber,
+            sugar: product.sugar,
+            protein: product.protein,
+            vitamins: product.vitamins,
+            ingredients: product.ingredients,
+            allergens: product.allergens,
+            price: product.price,
+            category: product.category,
+            subcategory: product.subcategory,
+            starpoints: product.starpoints
         })
         .then(response => {
           console.log(response)

@@ -8,23 +8,70 @@ export default class OrderSummary extends React.Component{
         this.props.handleRemoveFromCart(product)
 
         axios.post('/user', {
-          sessionID: this.props.sessionID,
-          actionType: "delete",
-          product: product.name,
-          quantity: product.quantity
+            sessionID: this.props.sessionID,
+            actionType: "delete",
+            quantity: product.quantity,
+            name: product.name,
+            size: product.size,
+            servingSize: product.servingSize,
+            servings: product.servings,
+            caloriesFromFat: product.caloriesFromFat,
+            calories: product.calories,
+            totalFat: product.total,
+            saturatedFat: product.saturatedFat,
+            transFat: product.transFat,
+            polyFat: product.polyFat,
+            monoFat: product.monoFat,
+            cholesterol: product.cholesterol,
+            sodium: product.sodium,
+            potassium: product.potassium,
+            carbs: product.carbs,
+            fiber: product.fiber,
+            sugar: product.sugar,
+            protein: product.protein,
+            vitamins: product.vitamins,
+            ingredients: product.ingredients,
+            allergens: product.allergens,
+            price: product.price,
+            category: product.category,
+            subcategory: product.subcategory,
+            starpoints: product.starpoints
         })
         .then(response => {
           console.log(response)
         })
     }
     clearCart() {
-        this.props.handleClearCart()
-        this.props.cart.items.forEach((item) => {
+        this.props.cart.items.forEach((product) => {
             axios.post('/user', {
                 sessionID: this.props.sessionID,
-                actionType: "checkout",
-                product: item.name,
-                quantity: item.quantity
+                actionType: "buy",
+                quantity: product.quantity,
+                name: product.name,
+                size: product.size,
+                servingSize: product.servingSize,
+                servings: product.servings,
+                caloriesFromFat: product.caloriesFromFat,
+                calories: product.calories,
+                totalFat: product.total,
+                saturatedFat: product.saturatedFat,
+                transFat: product.transFat,
+                polyFat: product.polyFat,
+                monoFat: product.monoFat,
+                cholesterol: product.cholesterol,
+                sodium: product.sodium,
+                potassium: product.potassium,
+                carbs: product.carbs,
+                fiber: product.fiber,
+                sugar: product.sugar,
+                protein: product.protein,
+                vitamins: product.vitamins,
+                ingredients: product.ingredients,
+                allergens: product.allergens,
+                price: product.price,
+                category: product.category,
+                subcategory: product.subcategory,
+                starpoints: product.starpoints
             })
                 .then(response => {
                     console.log(response)
@@ -32,15 +79,18 @@ export default class OrderSummary extends React.Component{
         })
         axios.post('/user', {
             sessionID: this.props.sessionID,
-            actionType: "cartsummary"
-        })
+            actionType: "cartSummary",
+            cartPrice: parseFloat(Math.round(this.props.cart.price * 100) * 1.075 / 100).toFixed(2),
+            cartItemCount: this.props.cart.count,
+            cartTotalStarpoints: this.props.cart.starpoints
+         })
         .then(response => {
             console.log(response)
         })
+        this.props.handleClearCart()
     }
     listCartItems() {
         const listedItems = this.props.cart.items.map((item) => {
-            console.log(item)
             return (
                 <div className='order-item'>
                     <img src={item.imageSrc} className='order-item-image'/>

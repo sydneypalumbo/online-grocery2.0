@@ -1,17 +1,19 @@
 @import "../../base/base";
-.logo-style {
-  display: inline-block;
-  width: 40%;
+
+.top-nav {
+  position: relative;
+  z-index: 9999;
 }
-.title{
-  font-size:30px;
+
+.title {
+  font-size: 30px;
   color: $price-green;
   display: inline-block;
   padding-bottom: 20px;
 }
 
-.subtitle{
-  font-size:16px;
+.subtitle {
+  font-size: 16px;
   color: $price-green;
   display: inline-block;
   padding-bottom: 20px;
@@ -19,8 +21,8 @@
   text-decoration: underline;
 }
 
-.count{
-  font-size:12px;
+.count {
+  font-size: 12px;
   color: $price-green;
   display: inline-block;
   padding-bottom: 20px;

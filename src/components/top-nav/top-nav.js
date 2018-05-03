@@ -63,7 +63,7 @@ export default class TopNav extends React.Component{
                 }
                 <div className= "subtitle"> {this.props.subcategoryName} </div>
                 <div className= "count"> {this.props.count} items</div>
-                <Search handleSetProducts={this.props.handleSetProducts} />
+                <Search handleSetProducts={this.props.handleSetProducts} sessionID={this.props.sessionID}/>
             </div>
         );
     }

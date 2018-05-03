@@ -33,7 +33,7 @@ class SearchPage extends React.Component{
         <Link to={{ pathname: '/home'}}>
             <div className='subtitle'>{staticText.browse}</div>
         </Link>
-        <Search handleSetProducts={this.props.handleSetProducts} />
+        <Search handleSetProducts={this.props.handleSetProducts} sessionID={this.props.sessionID}/>
         {this.props.products && this.props.products.length == 0 &&
             <div className='search-prompt'>{staticText.enterSearch}</div>
         }

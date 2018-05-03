@@ -12,7 +12,8 @@ const mapStateToProps = function(state){
         categories: state.category.categories,
         subcategories: state.category.subcategories,
         count: state.category.count,
-        page: state.page.page
+        page: state.page.page,
+        sessionID: state.user.sessionID
     }
 }
 

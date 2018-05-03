@@ -2,7 +2,6 @@ import React from 'react'
 import OrderSummary from './order-summary'
 import { connect } from 'react-redux'
 import { cartActionCreators } from '../../../reducers/cart/cart-actions';
-import axios from 'axios';
 
 const mapStateToProps = function(state){
     return {
