@@ -3,6 +3,16 @@ import './order-summary.scss'
 import axios from 'axios';
 export default class OrderSummary extends React.Component{
 
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            cartCategories: []
+        }
+
+        this.clearCart = this.clearCart.bind(this)
+    }
+
 
     removeFromCart(product) {
         this.props.handleRemoveFromCart(product)
@@ -17,7 +27,7 @@ export default class OrderSummary extends React.Component{
             servings: product.servings,
             caloriesFromFat: product.caloriesFromFat,
             calories: product.calories,
-            totalFat: product.total,
+            totalFat: product.totalFat,
             saturatedFat: product.saturatedFat,
             transFat: product.transFat,
             polyFat: product.polyFat,
@@ -42,6 +52,31 @@ export default class OrderSummary extends React.Component{
         })
     }
     clearCart() {
+        let cartCalories = 0
+        let cartFat = 0
+        let cartSugar = 0
+        let cartProtein = 0
+        this.props.cart.items.forEach((product) => {
+            cartCalories += product.calories
+            cartFat += product.totalFat
+            cartSugar += product.sugar
+            cartProtein += product.protein
+            let match = false
+            let cartCategories = this.state.cartCategories
+            for (let i = 0; i < cartCategories.length; i++) {
+                console.log(category, cartCategories)
+                const category = cartCategories[i]
+                if (category[0] === product.category && category[1] === product.subcategory){
+                    match = true
+                }
+            }
+            if (match == false) {
+                cartCategories.push([product.category, product.subcategory])
+                this.setState({
+                    cartCategories: cartCategories
+                })
+            }
+        })
         this.props.cart.items.forEach((product) => {
             axios.post('/user', {
                 sessionID: this.props.sessionID,
@@ -53,7 +88,7 @@ export default class OrderSummary extends React.Component{
                 servings: product.servings,
                 caloriesFromFat: product.caloriesFromFat,
                 calories: product.calories,
-                totalFat: product.total,
+                totalFat: product.totalFat,
                 saturatedFat: product.saturatedFat,
                 transFat: product.transFat,
                 polyFat: product.polyFat,
@@ -82,7 +117,12 @@ export default class OrderSummary extends React.Component{
             actionType: "cartSummary",
             cartPrice: parseFloat(Math.round(this.props.cart.price * 100) * 1.075 / 100).toFixed(2),
             cartItemCount: this.props.cart.count,
-            cartTotalStarpoints: this.props.cart.starpoints
+            cartTotalStarpoints: this.props.cart.starpoints,
+            cartCalories: cartCalories,
+            cartFat: cartFat,
+            cartSugar: cartSugar,
+            cartProtein: cartProtein,
+            cartCategories: this.state.cartCategories.length
          })
         .then(response => {
             console.log(response)

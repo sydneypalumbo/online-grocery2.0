@@ -31,7 +31,7 @@ export default class ProductCard extends React.Component {
             servings: product.servings,
             caloriesFromFat: product.caloriesFromFat,
             calories: product.calories,
-            totalFat: product.total,
+            totalFat: product.totalFat,
             saturatedFat: product.saturatedFat,
             transFat: product.transFat,
             polyFat: product.polyFat,
